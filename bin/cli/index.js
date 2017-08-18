@@ -30,7 +30,8 @@ const cli = require('meow')(
       s: 'silent'
     },
     default: {
-      poll: false
+      poll: false,
+      port: 3000
     }
   }
 )
