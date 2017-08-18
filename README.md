@@ -128,7 +128,7 @@ Using `svr --watch` you can add more files to be watched, but you need to reload
 
 `svr` is oriented for development scenario. 
 
-For run your code at `production`, simply create the boostraping server that you need.
+Under production, simply create the boostraping server that you need.
 
 For example, you can take this `server.js` as production server:
 
