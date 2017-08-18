@@ -78,14 +78,14 @@ Running `npm run dev` you start your HRM development server:
 ```bash
 $ npm start
 
-   ┌───────────────────────────────────────────────────┐
-   │                                                   │
-   │   my-express-api is running!                      │
-   │                                                   │
-   │   • Local:            http://localhost:3000       │
-   │   • On Your Network:  http://192.168.1.106:3000   │
-   │                                                   │
-   └───────────────────────────────────────────────────┘
+  ┌───────────────────────────────────────────────────┐
+  │                                                   │
+  │   my-express-api is running!                      │
+  │                                                   │
+  │   • Local:            http://localhost:3000       │
+  │   • On Your Network:  http://192.168.1.106:3000   │
+  │                                                   │
+  └───────────────────────────────────────────────────┘
 ```
 
 `svr` it's assuming main file is called `index.js` in the current path. Otherwise, you can provide the file path as first argument.
