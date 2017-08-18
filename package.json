@@ -10,6 +10,9 @@
     "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
+  "files": [
+    "bin"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kikobeats/srv.git"
