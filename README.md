@@ -103,7 +103,7 @@ Using `srv --watch` you can add more files to be watched, but you need to reload
   
    ℹ 18:32:42 modified index.js
    rs
-   ℹ 18:34:07 restart src/index.js
+   ℹ 18:34:07 restart index.js
 ```
 
 ## License
