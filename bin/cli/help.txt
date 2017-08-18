@@ -1,0 +1,18 @@
+Usage
+  $ srv [path][options]
+
+Options
+  -p, --port <n>      Port to listen on (defaults to 3000)
+  -H, --host          The host on which micro will run
+  -c, --cold          Disable hot reloading
+  -w, --watch <dir>   A directory to watch in addition to [path]
+  -L, --poll          Poll for code changes rather than using events
+  -i  --ignore <dir>  Ignore watching a file, directory, or glob
+  -s, --silent        Disable requests log
+  -v, --version       Output the version number
+  -h, --help          Show this usage information
+
+Examples
+  $ srv
+  $ srv index.js
+  $ srv src/index.js

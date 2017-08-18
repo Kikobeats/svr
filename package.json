@@ -1,0 +1,86 @@
+{
+  "name": "srv",
+  "description": "Running HTTP server with development experience",
+  "homepage": "https://documentup.com/Kikobeats/srv",
+  "version": "0.0.0",
+  "bin": {
+    "srv": "bin/cli/index.js"
+  },
+  "author": {
+    "name": "Kiko Beats",
+    "url": "https://github.com/Kikobeats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kikobeats/srv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kikobeats/srv/issues"
+  },
+  "keywords": [
+    "express",
+    "micro",
+    "http",
+    "rest",
+    "development",
+    "service",
+    "microservice",
+    "serverless",
+    "API"
+  ],
+  "dependencies": {
+    "acho": "~3.3.2",
+    "acho-skin-cli": "~1.0.0",
+    "boxen": "~1.2.1",
+    "chalk": "~2.1.0",
+    "chokidar": "~1.7.0",
+    "clear-module": "~2.1.0",
+    "express": "~4.15.4",
+    "get-port": "~3.1.0",
+    "ip": "~1.1.5",
+    "json-future": "~2.1.2",
+    "log-symbols": "~2.0.0",
+    "meow": "~3.7.0",
+    "time-stamp": "~2.0.0",
+    "update-notifier": "~2.2.0"
+  },
+  "devDependencies": {
+    "coveralls": "latest",
+    "git-dirty": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "mocha": "latest",
+    "nyc": "latest",
+    "prettier-standard": "latest",
+    "should": "latest",
+    "standard": "latest",
+    "standard-markdown": "latest"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "standard-markdown && standard",
+    "precommit": "lint-staged",
+    "precommit-lint": "prettier-standard",
+    "prelint": "npm run pretty",
+    "pretest": "npm run lint",
+    "pretty": "prettier-standard {core,test,bin}/**/*.js",
+    "test": "nyc mocha"
+  },
+  "preferGlobal": true,
+  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "precommit-lint",
+      "git add"
+    ]
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  }
+}
