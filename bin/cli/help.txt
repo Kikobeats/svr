@@ -1,5 +1,5 @@
 Usage
-  $ srv [path][options]
+  $ svr [path][options]
 
 Options
   -p, --port <n>      Port to listen on (defaults to 3000)
@@ -13,6 +13,6 @@ Options
   -h, --help          Show this usage information
 
 Examples
-  $ srv
-  $ srv index.js
-  $ srv src/index.js
+  $ svr
+  $ svr index.js
+  $ svr src/index.js

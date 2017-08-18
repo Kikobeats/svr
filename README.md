@@ -1,17 +1,17 @@
-# srv
+# svr
 
 <p align="center">
   <br>
-  <img src="demo.gif" alt="srv">
+  <img src="demo.gif" alt="svr">
   <br>
 </p>
 
-![Last version](https://img.shields.io/github/tag/Kikobeats/srv.svg?style=flat-square)
-[![Build Status](https://img.shields.io/travis/Kikobeats/srv/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/srv)
-[![Coverage Status](https://img.shields.io/coveralls/Kikobeats/srv.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/srv)
-[![Dependency status](https://img.shields.io/david/Kikobeats/srv.svg?style=flat-square)](https://david-dm.org/Kikobeats/srv)
-[![Dev Dependencies Status](https://img.shields.io/david/dev/Kikobeats/srv.svg?style=flat-square)](https://david-dm.org/Kikobeats/srv#info=devDependencies)
-[![NPM Status](https://img.shields.io/npm/dm/srv.svg?style=flat-square)](https://www.npmjs.org/package/srv)
+![Last version](https://img.shields.io/github/tag/Kikobeats/svr.svg?style=flat-square)
+[![Build Status](https://img.shields.io/travis/Kikobeats/svr/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/svr)
+[![Coverage Status](https://img.shields.io/coveralls/Kikobeats/svr.svg?style=flat-square)](https://coveralls.io/github/Kikobeats/svr)
+[![Dependency status](https://img.shields.io/david/Kikobeats/svr.svg?style=flat-square)](https://david-dm.org/Kikobeats/svr)
+[![Dev Dependencies Status](https://img.shields.io/david/dev/Kikobeats/svr.svg?style=flat-square)](https://david-dm.org/Kikobeats/svr#info=devDependencies)
+[![NPM Status](https://img.shields.io/npm/dm/svr.svg?style=flat-square)](https://www.npmjs.org/package/svr)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
 > Hot Module replacement (HMR) capabilities for HTTP Server under development.
@@ -21,7 +21,7 @@ It's similar [micro-dev](https://github.com/zeit/micro-dev), but for HTTP server
 ## Install
 
 ```bash
-$ npm install srv --global
+$ npm install svr --global
 ```
 
 ## Usage
@@ -53,10 +53,10 @@ module.exports = (app, express) => {
 }
 ```
 
-Then just call `srv`:
+Then just call `svr`:
 
 ```bash
-$ srv
+$ svr
 
    ┌───────────────────────────────────────────────────┐
    │                                                   │
@@ -68,9 +68,9 @@ $ srv
    └───────────────────────────────────────────────────┘
 ```
 
-Here `srv` it assuming the main file is called `index.js` and it exists in the current directory. Otherwise, you can provide the file path as first argument.
+Here `svr` it assuming the main file is called `index.js` and it exists in the current directory. Otherwise, you can provide the file path as first argument.
 
-Now whatever file modification in the current directory is listened by the `srv` automagically:
+Now whatever file modification in the current directory is listened by the `svr` automagically:
 
 ```bash
   ┌───────────────────────────────────────────────────┐
@@ -87,7 +87,7 @@ Now whatever file modification in the current directory is listened by the `srv`
 
 It takes in consideration your `.gitignore` files, so it only reloads the right file.
 
-Using `srv --watch` you can add more files to be watched, but you need to reload the server in any time, just type `rs`:
+Using `svr --watch` you can add more files to be watched, but you need to reload the server in any time, just type `rs`:
 
 ```bash
   ┌───────────────────────────────────────────────────┐

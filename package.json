@@ -1,10 +1,10 @@
 {
-  "name": "srv",
-  "description": "HTTP server with Hot Module Replace (HMR) capabilities for development",
-  "homepage": "https://documentup.com/Kikobeats/srv",
+  "name": "svr",
+  "description": "Hot Module Replacement for HTTP Server",
+  "homepage": "https://documentup.com/Kikobeats/svr",
   "version": "0.0.0",
   "bin": {
-    "srv": "bin/cli/index.js"
+    "svr": "bin/cli/index.js"
   },
   "author": {
     "name": "Kiko Beats",
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kikobeats/srv.git"
+    "url": "git+https://github.com/kikobeats/svr.git"
   },
   "bugs": {
-    "url": "https://github.com/Kikobeats/srv/issues"
+    "url": "https://github.com/Kikobeats/svr/issues"
   },
   "keywords": [
     "refresh",
