@@ -16,7 +16,7 @@
 
 > Hot Module replacement (HMR) capabilities for HTTP Server under development.
 
-It's similar [micro-dev](https://github.com/zeit/micro-dev), but for HTTP server out of the box.
+It's similar [micro-dev](https://github.com/zeit/micro-dev), but out of the box for any framework that use [http.Server.listen()](https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback) interface.
 
 ## Install
 
