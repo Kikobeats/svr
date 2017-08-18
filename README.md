@@ -2,7 +2,7 @@
 
 <p align="center">
   <br>
-  <img src="demo.gif" alt="svr">
+  <img src="https://d26dzxoao6i3hh.cloudfront.net/items/36410M2p1j2T322w0Q2g/Screen%20Recording%202017-08-18%20at%2011.24%20pm.gif?v=35e385d1" alt="svr">
   <br>
 </p>
 
