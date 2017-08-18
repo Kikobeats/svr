@@ -14,19 +14,29 @@
 [![NPM Status](https://img.shields.io/npm/dm/svr.svg?style=flat-square)](https://www.npmjs.org/package/svr)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> Hot Module replacement (HMR) capabilities for HTTP Server under development.
+> Hot Module replacement (HMR) capabilities for any HTTP Server.
 
 It's similar [micro-dev](https://github.com/zeit/micro-dev), but out of the box for any framework that use [http.Server.listen()](https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback) interface.
 
 ## Install
 
 ```bash
-$ npm install svr --global
+$ npm install svr --save-dev
 ```
 
 ## Usage
 
-The only require thing is pass to CLI a exported function that follow `app, express` as interface, returning `app` at the end:
+### Development
+
+The only requirement is define the main file of your server as exported function that follow this interface:
+
+```js
+module.exports = (app, express) => {
+/* your awesome code here */
+}
+```
+
+This could be a good start point for a HTTP server:
 
 ```js
 const isProduction = process.env.NODE_ENV === 'production'
@@ -53,10 +63,20 @@ module.exports = (app, express) => {
 }
 ```
 
-Then just call `svr`:
+After that, you need to call `svr`. We recommend add `svr` as npm script:
+
+```json
+{
+  "scripts": {
+    "dev": "srv"
+  }
+}
+```
+
+Running `npm run dev` you start your HRM development server:
 
 ```bash
-$ svr
+$ npm start
 
    ┌───────────────────────────────────────────────────┐
    │                                                   │
@@ -68,7 +88,7 @@ $ svr
    └───────────────────────────────────────────────────┘
 ```
 
-Here `svr` it assuming the main file is called `index.js` and it exists in the current directory. Otherwise, you can provide the file path as first argument.
+`svr` it's assuming main file is called `index.js` in the current path. Otherwise, you can provide the file path as first argument.
 
 Now whatever file modification in the current directory is listened by the `svr` automagically:
 
@@ -85,7 +105,7 @@ Now whatever file modification in the current directory is listened by the `svr`
    ℹ 18:32:42 modified index.js
 ```
 
-It takes in consideration your `.gitignore` files, so it only reloads the right file.
+It takes in consideration your `.gitignore` files, so it only will reload the right files.
 
 Using `svr --watch` you can add more files to be watched, but you need to reload the server in any time, just type `rs`:
 
@@ -103,6 +123,43 @@ Using `svr --watch` you can add more files to be watched, but you need to reload
    rs
    ℹ 18:34:07 restart index.js
 ```
+
+### Production
+
+`svr` is oriented for development scenario. 
+
+For run your code at `production`, simply create the boostraping server that you need.
+
+For example, you can take this `server.js` as production server:
+
+```js
+'use strict'
+
+const express = require('express')
+
+const app = express()
+
+require('./index')(app, express)
+
+const port = process.env.PORT || process.env.port || 3000
+const { name } = require('../package.json')
+
+app.listen(port, function () {
+  console.log(`${name} is running at http://localhost:${port}`)
+})
+```
+
+Just add it as `npm start` script
+
+```
+{
+  "scripts": {
+    "start": "node server.js"
+  }
+}
+```
+
+That's all. You're taking the best of the two worlds: Developer Experience for development and tiny bundle for production.
 
 ## License
 
