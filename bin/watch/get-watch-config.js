@@ -1,16 +1,8 @@
 'use strict'
 
 const getIgnoredFromGit = require('ignored')
+const ignoredDirectories = require('ignore-by-default').directories()
 const path = require('path')
-
-const DEFAULT_IGNORED = [
-  '.git',
-  'node_modules',
-  '.nyc_output',
-  '.sass-cache',
-  'coverage',
-  /\.swp$/
-]
 
 const getIgnoredFiles = ({ cli, filepkg }) => {
   const set = new Set()
@@ -22,7 +14,7 @@ const getIgnoredFiles = ({ cli, filepkg }) => {
   if (cli.flags.ignore) cli.flags.ignore.forEach(addIgnore)
   if (filepkg.ignore) filepkg.ignore.forEach(addIgnore)
 
-  DEFAULT_IGNORED.forEach(addIgnore)
+  ignoredDirectories.forEach(addIgnore)
 
   return Array.from(set)
 }

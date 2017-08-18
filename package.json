@@ -37,6 +37,7 @@
     "clear-module": "~2.1.0",
     "express": "~4.15.4",
     "get-port": "~3.1.0",
+    "ignore-by-default": "~1.0.1",
     "ignored": "~2.0.4",
     "ip": "~1.1.5",
     "json-future": "~2.1.2",
