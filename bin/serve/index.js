@@ -1,6 +1,6 @@
 'use strict'
 
-const express = require('express')
+const importCwd = require('import-cwd')
 const path = require('path')
 
 const listenMessage = require('./listen-message')
@@ -9,9 +9,11 @@ const getPort = require('./get-port')
 module.exports = async ({ filename, filepkg, cli, restarting }) => {
   const { userPort, port, inUse } = await getPort(cli)
 
-  const app = express()
   const filepath = path.resolve(process.cwd(), filename)
   const module = require(filepath)
+
+  const express = importCwd('express')
+  const app = express()
 
   module(app, express)
 

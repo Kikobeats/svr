@@ -14,7 +14,7 @@
 [![NPM Status](https://img.shields.io/npm/dm/srv.svg?style=flat-square)](https://www.npmjs.org/package/srv)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> Express with development experience features
+> HTTP server with Hot Module Replace (HMR) capabilities for development.
 
 ## Install
 

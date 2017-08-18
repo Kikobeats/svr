@@ -1,6 +1,6 @@
 {
   "name": "srv",
-  "description": "Running HTTP server with development experience",
+  "description": "HTTP server with Hot Module Replace (HMR) capabilities for development",
   "homepage": "https://documentup.com/Kikobeats/srv",
   "version": "0.0.0",
   "bin": {
@@ -21,6 +21,12 @@
     "url": "https://github.com/Kikobeats/srv/issues"
   },
   "keywords": [
+    "refresh",
+    "hrm",
+    "hot",
+    "module",
+    "replacement",
+    "reload",
     "express",
     "micro",
     "http",
@@ -38,10 +44,10 @@
     "chalk": "~2.1.0",
     "chokidar": "~1.7.0",
     "clear-module": "~2.1.0",
-    "express": "~4.15.4",
     "get-port": "~3.1.0",
     "ignore-by-default": "~1.0.1",
     "ignored": "~2.0.4",
+    "import-cwd": "~2.1.0",
     "ip": "~1.1.5",
     "json-future": "~2.1.2",
     "log-symbols": "~2.0.0",
