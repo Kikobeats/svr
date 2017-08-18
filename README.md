@@ -14,9 +14,7 @@
 [![NPM Status](https://img.shields.io/npm/dm/srv.svg?style=flat-square)](https://www.npmjs.org/package/srv)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> HTTP server with Hot Module Replace (HMR) capabilities for development.
-
-This command line interface provide HMR capabilities for a HTTP server.
+> Hot Module replacement (HMR) capabilities for HTTP Server under development.
 
 It's similar [micro-dev](https://github.com/zeit/micro-dev), but for HTTP server out of the box.
 
