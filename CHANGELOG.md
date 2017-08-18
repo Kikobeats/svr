@@ -1,3 +1,19 @@
+<a name="0.1.1"></a>
+## 0.1.1 (2017-08-18)
+
+* Add http.server link ([5c76c43](https://github.com/kikobeats/svr/commit/5c76c43))
+* Better docs ([279ac90](https://github.com/kikobeats/svr/commit/279ac90))
+* Fix port ([9a138e2](https://github.com/kikobeats/svr/commit/9a138e2))
+* Improve demo ([8b383ab](https://github.com/kikobeats/svr/commit/8b383ab))
+* Refactor ([328ac3b](https://github.com/kikobeats/svr/commit/328ac3b))
+* Update compositor.json ([11120a0](https://github.com/kikobeats/svr/commit/11120a0))
+* Update compositor.json ([c3b0052](https://github.com/kikobeats/svr/commit/c3b0052))
+* Update compositor.json via compositor.io ([3833f74](https://github.com/kikobeats/svr/commit/3833f74))
+* Update README.md ([9a405d4](https://github.com/kikobeats/svr/commit/9a405d4))
+* Update README.md ([e358a8a](https://github.com/kikobeats/svr/commit/e358a8a))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2017-08-18)
 
