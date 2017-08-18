@@ -19,14 +19,14 @@ const logRestart = filepath => {
   console.log(`${offset} ${symbol} ${timestamp} ${header} ${message}`)
 }
 
-module.exports = ({ file, server, cli, sockets }) => {
-  const watchConfig = getWatchConfig(cli)
+module.exports = ({ filepath, filepkg, server, cli, sockets }) => {
+  const watchConfig = getWatchConfig({ cli, filepkg })
   const watcher = watch('.', watchConfig)
 
   const doRestart = filepath => {
     logRestart()
     destroySockets(sockets)
-    server.close(restartServer.bind(this, { file, cli, watcher }))
+    server.close(restartServer.bind(this, { filepath, filepkg, cli, watcher }))
   }
 
   watcher.on('all', (event, filePath) => {

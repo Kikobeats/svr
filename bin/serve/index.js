@@ -5,23 +5,22 @@ const express = require('express')
 const listenMessage = require('./listen-message')
 const getPort = require('./get-port')
 
-module.exports = async ({ file, cli, restarting }) => {
+module.exports = async ({ filepath, filepkg, cli, restarting }) => {
   const { userPort, port, inUse } = await getPort(cli)
 
   const app = express()
 
-  const module = require(file)
+  const module = require(filepath)
   module(app, express)
 
   const server = app.listen(port, () => {
     if (!restarting) {
       const message = listenMessage({
-        appName: cli.pkg.name,
+        appName: filepkg.name,
         port,
         inUse,
         userPort
       })
-
       console.log(message)
     }
   })
@@ -33,5 +32,5 @@ module.exports = async ({ file, cli, restarting }) => {
     socket.once('close', () => sockets.splice(index, 1))
   })
 
-  require('../watch')({ file, server, cli, sockets })
+  require('../watch')({ filepath, filepkg, server, cli, sockets })
 }

@@ -36,8 +36,8 @@ const cli = require('meow')(
 )
 ;(async () => {
   try {
-    const file = getMainFile(cli)
-    require('../serve')({ file, cli, restarting: false })
+    const { filepath, filepkg } = getMainFile(cli)
+    require('../serve')({ filepath, filepkg, cli, restarting: false })
   } catch (err) {
     log.error(err.message || err)
     process.exit(1)
