@@ -4,35 +4,31 @@ const getTimestamp = require('time-stamp')
 const logSymbols = require('log-symbols')
 const { watch } = require('chokidar')
 const chalk = require('chalk')
-const path = require('path')
 
 const destroySockets = require('./destroy-sockets')
 const getWatchConfig = require('./get-watch-config')
 const restartServer = require('./restart-server')
 
-const logRestart = filepath => {
+const logRestart = filename => {
   const offset = '   '
   const symbol = chalk.blue(logSymbols.info)
   const timestamp = chalk.gray(getTimestamp('HH:mm:ss'))
-  const header = chalk.blue(filepath ? 'modified' : 'restart')
-  const message = chalk.gray(filepath || '')
+  const header = chalk.blue(filename ? 'modified' : 'restart')
+  const message = chalk.gray(filename || '')
   console.log(`${offset} ${symbol} ${timestamp} ${header} ${message}`)
 }
 
-module.exports = ({ filepath, filepkg, server, cli, sockets }) => {
+module.exports = ({ filename, filepkg, server, cli, sockets }) => {
   const watchConfig = getWatchConfig({ cli, filepkg })
   const watcher = watch('.', watchConfig)
 
-  const doRestart = filepath => {
-    logRestart()
+  const doRestart = filename => {
+    logRestart(filename)
     destroySockets(sockets)
-    server.close(restartServer.bind(this, { filepath, filepkg, cli, watcher }))
+    server.close(restartServer.bind(this, { filename, filepkg, cli, watcher }))
   }
 
-  watcher.on('all', (event, filePath) => {
-    const filepath = path.relative(process.cwd(), filePath)
-    doRestart(filepath)
-  })
+  watcher.on('all', (event, filename) => doRestart(filename))
 
   process.stdin.on('data', data => {
     const text = data.toString().trim().toLowerCase()

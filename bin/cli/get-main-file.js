@@ -7,7 +7,6 @@ module.exports = cli => {
   const filepkg = jsonFuture.load(path.resolve(process.cwd(), 'package.json'))
   const filenameFallback = filepkg.main || 'index.js'
   const [filename = filenameFallback] = cli.input
-  const filepath = path.resolve(process.cwd(), filename)
 
-  return { filepath, filepkg }
+  return { filename, filepkg }
 }

@@ -3,7 +3,7 @@
 const clearModule = require('clear-module')
 const path = require('path')
 
-module.exports = ({ file, cli, watcher }) => {
+module.exports = ({ filename, filepkg, cli, watcher }) => {
   const watched = watcher.getWatched()
   let toDelete = []
 
@@ -39,5 +39,5 @@ module.exports = ({ file, cli, watcher }) => {
   }
 
   // Restart the server
-  require('../serve')({ file, cli, restarting: true })
+  require('../serve')({ filename, filepkg, cli, restarting: true })
 }

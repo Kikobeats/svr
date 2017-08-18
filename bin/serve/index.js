@@ -1,16 +1,18 @@
 'use strict'
 
 const express = require('express')
+const path = require('path')
 
 const listenMessage = require('./listen-message')
 const getPort = require('./get-port')
 
-module.exports = async ({ filepath, filepkg, cli, restarting }) => {
+module.exports = async ({ filename, filepkg, cli, restarting }) => {
   const { userPort, port, inUse } = await getPort(cli)
 
   const app = express()
-
+  const filepath = path.resolve(process.cwd(), filename)
   const module = require(filepath)
+
   module(app, express)
 
   const server = app.listen(port, () => {
@@ -32,5 +34,5 @@ module.exports = async ({ filepath, filepkg, cli, restarting }) => {
     socket.once('close', () => sockets.splice(index, 1))
   })
 
-  require('../watch')({ filepath, filepkg, server, cli, sockets })
+  require('../watch')({ filename, filepkg, server, cli, sockets })
 }
