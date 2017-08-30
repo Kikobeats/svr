@@ -2,7 +2,7 @@
   "name": "svr",
   "description": "Hot Module Replacement for HTTP Server",
   "homepage": "https://documentup.com/Kikobeats/svr",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "bin": {
     "svr": "bin/cli/index.js"
   },
@@ -86,8 +86,8 @@
   "license": "MIT",
   "lint-staged": {
     "*.js": [
-      "precommit-lint",
-      "git add"
+      "git add",
+      "precommit-lint"
     ]
   },
   "standard": {

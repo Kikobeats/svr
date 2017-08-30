@@ -1,3 +1,11 @@
+<a name="0.2.0"></a>
+# 0.2.0 (2017-08-30)
+
+* Fix #3 ([accffe5](https://github.com/kikobeats/svr/commit/accffe5)), closes [#3](https://github.com/kikobeats/svr/issues/3)
+* Fix #3 ([dd37155](https://github.com/kikobeats/svr/commit/dd37155)), closes [#3](https://github.com/kikobeats/svr/issues/3)
+
+
+
 <a name="0.1.1"></a>
 ## 0.1.1 (2017-08-18)
 
