@@ -3,6 +3,7 @@
 const getTimestamp = require('time-stamp')
 const logSymbols = require('log-symbols')
 const { watch } = require('chokidar')
+const debounce = require('debounce')
 const chalk = require('chalk')
 
 const destroySockets = require('./destroy-sockets')
@@ -30,8 +31,10 @@ module.exports = ({ filename, filepkg, server, cli, sockets }) => {
     server.close(restartServer.bind(this, { filename, filepkg, cli, watcher }))
   }
 
-  watcher.on('all', (event, filename) =>
-    doRestart({ filename, forcing: false })
+  watcher.on(
+    'all',
+    debounce((event, filename) => doRestart({ filename, forcing: false })),
+    10
   )
 
   if (!isListenRestart) {

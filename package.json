@@ -41,6 +41,7 @@
     "chalk": "~2.1.0",
     "chokidar": "~1.7.0",
     "clear-module": "~2.1.0",
+    "debounce": "~1.0.2",
     "get-port": "~3.1.0",
     "ignore-by-default": "~1.0.1",
     "ignored": "~2.0.4",

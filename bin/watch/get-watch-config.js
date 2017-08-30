@@ -26,7 +26,6 @@ module.exports = ({ cli, filepkg }) => {
   const watchConfig = {
     usePolling,
     ignoreInitial: true,
-    cwd: process.cwd(),
     ignored
   }
 
