@@ -22,9 +22,6 @@ module.exports = ({ filename, filepkg, cli, watcher }) => {
 
   toDelete = toDelete.map(filename => path.resolve(process.cwd(), filename))
 
-  // Stop watching any files
-  watcher.close()
-
   // Remove file that changed from the `require` cache
   for (const item of toDelete) {
     let location
