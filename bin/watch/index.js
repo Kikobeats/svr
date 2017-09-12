@@ -31,7 +31,7 @@ module.exports = ({ filename, filepkg, server, cli, sockets }) => {
     server.close(restartServer.bind(this, { filename, filepkg, cli, watcher }))
   }
 
-  watcher.on(
+  watcher.once(
     'all',
     debounce((event, filename) => doRestart({ filename, forcing: false })),
     10
