@@ -35,14 +35,14 @@
     "service"
   ],
   "dependencies": {
-    "acho": "~3.3.2",
-    "acho-skin-cli": "~1.0.0",
+    "acho": "~4.0.0",
+    "acho-skin-cli": "~2.0.1",
     "boxen": "~1.2.1",
     "chalk": "~2.1.0",
     "chokidar": "~1.7.0",
     "clear-module": "~2.1.0",
     "debounce": "~1.0.2",
-    "get-port": "~3.1.0",
+    "get-port": "~3.2.0",
     "ignore-by-default": "~1.0.1",
     "ignored": "~2.0.4",
     "import-cwd": "~2.1.0",
@@ -86,8 +86,8 @@
   "license": "MIT",
   "lint-staged": {
     "*.js": [
-      "git add",
-      "precommit-lint"
+      "precommit-lint",
+      "git add"
     ]
   },
   "standard": {

@@ -9,7 +9,8 @@ const getMainFile = require('./get-main-file')
 
 require('update-notifier')({ pkg }).notify()
 
-const log = require('acho').skin(require('acho-skin-cli'))({
+const log = require('acho')({
+  types: require('acho-skin-cli'),
   keyword: 'symbol'
 })
 
