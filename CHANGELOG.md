@@ -1,3 +1,12 @@
+<a name="0.2.1"></a>
+## 0.2.1 (2017-09-16)
+
+* Don't close watcher before restart ([11211bf](https://github.com/kikobeats/svr/commit/11211bf))
+* Setup watcher just once ([97b8752](https://github.com/kikobeats/svr/commit/97b8752))
+* Update deps ([4caba7e](https://github.com/kikobeats/svr/commit/4caba7e))
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2017-08-30)
 
