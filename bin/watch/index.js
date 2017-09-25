@@ -2,15 +2,15 @@
 
 const getTimestamp = require('time-stamp')
 const logSymbols = require('log-symbols')
-const { watch } = require('chokidar')
 const debounce = require('debounce')
+const { watch } = require('chokidar')
 const chalk = require('chalk')
 
-const destroySockets = require('./destroy-sockets')
 const getWatchConfig = require('./get-watch-config')
+const destroySockets = require('./destroy-sockets')
 const restartServer = require('./restart-server')
 
-let isListenRestart = false
+let firsTime = false
 
 const logRestart = ({ filename, forcing }) => {
   const offset = '   '
@@ -21,28 +21,53 @@ const logRestart = ({ filename, forcing }) => {
   console.log(`${offset} ${symbol} ${timestamp} ${header} ${message}`)
 }
 
-module.exports = ({ filename, filepkg, server, cli, sockets }) => {
-  const watchConfig = getWatchConfig({ cli, filepkg })
-  const watcher = watch('.', watchConfig)
+const doRestart = ({
+  ignored,
+  sockets,
+  server,
+  filename,
+  pkg,
+  forcing,
+  cli,
+  watcher
+}) => {
+  logRestart({ filename, forcing })
+  destroySockets(sockets)
+  server.close(
+    restartServer.bind(this, { ignored, filename, pkg, cli, watcher })
+  )
+}
 
-  const doRestart = ({ filename, forcing }) => {
-    logRestart({ filename, forcing })
-    destroySockets(sockets)
-    server.close(restartServer.bind(this, { filename, filepkg, cli, watcher }))
-  }
+module.exports = ({ filename, pkg, server, cli, sockets }) => {
+  const { watchConfig, rawIgnored: ignored } = getWatchConfig({ cli, pkg })
+  const watcher = watch(process.cwd(), watchConfig)
+
+  const restart = ({ forcing }) =>
+    doRestart({
+      ignored,
+      sockets,
+      server,
+      filename,
+      pkg,
+      forcing,
+      cli,
+      watcher
+    })
 
   watcher.once(
     'all',
-    debounce((event, filename) => doRestart({ filename, forcing: false })),
+    debounce((event, filename) => restart({ forcing: false })),
     10
   )
 
-  if (!isListenRestart) {
-    isListenRestart = true
-
+  if (!firsTime) {
+    firsTime = true
     process.stdin.on('data', data => {
-      const text = data.toString().trim().toLowerCase()
-      if (text === 'rs') doRestart({ filename, forcing: true })
+      const text = data
+        .toString()
+        .trim()
+        .toLowerCase()
+      if (text === 'rs') restart({ forcing: true })
     })
   }
 }

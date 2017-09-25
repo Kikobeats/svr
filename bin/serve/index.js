@@ -6,7 +6,7 @@ const path = require('path')
 const listenMessage = require('./listen-message')
 const getPort = require('./get-port')
 
-module.exports = async ({ filename, filepkg, cli, restarting }) => {
+module.exports = async ({ filename, pkg, cli, restarting }) => {
   const { userPort, port, inUse } = await getPort(cli)
 
   const filepath = path.resolve(process.cwd(), filename)
@@ -20,7 +20,7 @@ module.exports = async ({ filename, filepkg, cli, restarting }) => {
   const server = app.listen(port, () => {
     if (!restarting) {
       const message = listenMessage({
-        appName: filepkg.name,
+        appName: pkg.name,
         port,
         inUse,
         userPort
@@ -36,5 +36,5 @@ module.exports = async ({ filename, filepkg, cli, restarting }) => {
     socket.once('close', () => sockets.splice(index, 1))
   })
 
-  require('../watch')({ filename, filepkg, server, cli, sockets })
+  require('../watch')({ filename, pkg, server, cli, sockets })
 }

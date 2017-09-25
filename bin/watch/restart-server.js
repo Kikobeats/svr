@@ -1,9 +1,10 @@
 'use strict'
 
 const clearModule = require('clear-module')
+const anymatch = require('anymatch')
 const path = require('path')
 
-module.exports = ({ filename, filepkg, cli, watcher }) => {
+module.exports = ({ filename, pkg, cli, watcher, ignored }) => {
   const watched = watcher.getWatched()
   let toDelete = []
 
@@ -20,7 +21,11 @@ module.exports = ({ filename, filepkg, cli, watcher }) => {
     }
   }
 
-  toDelete = toDelete.map(filename => path.resolve(process.cwd(), filename))
+  const matchers = anymatch(ignored)
+
+  toDelete = toDelete
+    .filter(filename => !matchers(path.basename(filename)))
+    .map(filename => path.resolve(process.cwd(), filename))
 
   // Remove file that changed from the `require` cache
   for (const item of toDelete) {
@@ -36,5 +41,5 @@ module.exports = ({ filename, filepkg, cli, watcher }) => {
   }
 
   // Restart the server
-  require('../serve')({ filename, filepkg, cli, restarting: true })
+  require('../serve')({ filename, pkg, cli, restarting: true })
 }
