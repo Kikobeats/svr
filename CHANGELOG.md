@@ -1,3 +1,11 @@
+<a name="0.3.0"></a>
+# 0.3.0 (2017-09-25)
+
+* Add UI feedback ([fe02e60](https://github.com/kikobeats/svr/commit/fe02e60))
+* Tweaks ([8bf43fd](https://github.com/kikobeats/svr/commit/8bf43fd))
+
+
+
 <a name="0.2.1"></a>
 ## 0.2.1 (2017-09-16)
 
