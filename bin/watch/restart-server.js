@@ -4,7 +4,7 @@ const clearModule = require('clear-module')
 const anymatch = require('anymatch')
 const path = require('path')
 
-module.exports = ({ filename, pkg, cli, watcher, ignored }) => {
+module.exports = ({ spinner, filename, pkg, cli, watcher, ignored }) => {
   const watched = watcher.getWatched()
   let toDelete = []
 
@@ -42,4 +42,5 @@ module.exports = ({ filename, pkg, cli, watcher, ignored }) => {
 
   // Restart the server
   require('../serve')({ filename, pkg, cli, restarting: true })
+  spinner.stop()
 }

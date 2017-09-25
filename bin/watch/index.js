@@ -2,14 +2,17 @@
 
 const getTimestamp = require('time-stamp')
 const logSymbols = require('log-symbols')
-const debounce = require('debounce')
+const logUpdate = require('log-update')
 const { watch } = require('chokidar')
+const debounce = require('debounce')
 const chalk = require('chalk')
 
 const getWatchConfig = require('./get-watch-config')
 const destroySockets = require('./destroy-sockets')
 const restartServer = require('./restart-server')
+const ora = require('ora')
 
+const createSpinner = () => ora({ color: 'gray' })
 let firsTime = false
 
 const logRestart = ({ filename, forcing }) => {
@@ -18,7 +21,26 @@ const logRestart = ({ filename, forcing }) => {
   const timestamp = chalk.gray(getTimestamp('HH:mm:ss'))
   const header = chalk.blue(forcing ? 'restart' : 'modified')
   const message = chalk.gray(filename || '')
-  console.log(`${offset} ${symbol} ${timestamp} ${header} ${message}`)
+  const spinner = createSpinner()
+  const logMessage = `${offset} ${symbol} ${timestamp} ${header} ${message}`
+
+  let done = false
+
+  const timer = setInterval(() => {
+    done
+      ? logUpdate(`${logMessage}`)
+      : logUpdate(`${logMessage} ${spinner.frame()}`)
+  }, 50)
+
+  return {
+    stop: () => {
+      done = true
+      setTimeout(() => {
+        clearInterval(timer)
+        logUpdate.done()
+      }, 50)
+    }
+  }
 }
 
 const doRestart = ({
@@ -31,10 +53,10 @@ const doRestart = ({
   cli,
   watcher
 }) => {
-  logRestart({ filename, forcing })
+  const spinner = logRestart({ filename, forcing })
   destroySockets(sockets)
   server.close(
-    restartServer.bind(this, { ignored, filename, pkg, cli, watcher })
+    restartServer.bind(this, { spinner, ignored, filename, pkg, cli, watcher })
   )
 }
 
