@@ -35,8 +35,6 @@
     "service"
   ],
   "dependencies": {
-    "acho": "~4.0.0",
-    "acho-skin-cli": "~2.0.1",
     "boxen": "~1.2.1",
     "chalk": "~2.1.0",
     "chokidar": "~1.7.0",
