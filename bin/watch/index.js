@@ -3,7 +3,7 @@
 const { watch } = require('chokidar')
 const debounce = require('debounce')
 
-const { restart: logRestart } = require('../serve/log')
+const { restart: logRestart } = require('../cli/log')
 const getWatchConfig = require('./get-watch-config')
 const destroySockets = require('./destroy-sockets')
 const restartServer = require('./restart-server')

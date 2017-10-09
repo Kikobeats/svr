@@ -3,9 +3,9 @@
 const importCwd = require('import-cwd')
 const path = require('path')
 
+const { error: logError } = require('../cli/log')
 const listenMessage = require('./listen-message')
 const getPort = require('./get-port')
-const { error: logError } = require('./log')
 
 module.exports = async ({ filename, pkg, cli, restarting }) => {
   const { userPort, port, inUse } = await getPort(cli)
