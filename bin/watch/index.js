@@ -1,47 +1,14 @@
 'use strict'
 
-const getTimestamp = require('time-stamp')
-const logSymbols = require('log-symbols')
-const logUpdate = require('log-update')
 const { watch } = require('chokidar')
 const debounce = require('debounce')
-const chalk = require('chalk')
 
+const { restart: logRestart } = require('../serve/log')
 const getWatchConfig = require('./get-watch-config')
 const destroySockets = require('./destroy-sockets')
 const restartServer = require('./restart-server')
-const ora = require('ora')
 
-const createSpinner = () => ora({ color: 'gray' })
 let firsTime = false
-
-const logRestart = ({ filename, forcing }) => {
-  const offset = '   '
-  const symbol = chalk.blue(logSymbols.info)
-  const timestamp = chalk.gray(getTimestamp('HH:mm:ss'))
-  const header = chalk.blue(forcing ? 'restart' : 'modified')
-  const message = chalk.gray(filename || '')
-  const spinner = createSpinner()
-  const logMessage = `${offset} ${symbol} ${timestamp} ${header} ${message}`
-
-  let done = false
-
-  const timer = setInterval(() => {
-    done
-      ? logUpdate(`${logMessage}`)
-      : logUpdate(`${logMessage} ${spinner.frame()}`)
-  }, 50)
-
-  return {
-    stop: () => {
-      done = true
-      setTimeout(() => {
-        clearInterval(timer)
-        logUpdate.done()
-      }, 50)
-    }
-  }
-}
 
 const doRestart = ({
   ignored,

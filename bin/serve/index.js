@@ -5,36 +5,40 @@ const path = require('path')
 
 const listenMessage = require('./listen-message')
 const getPort = require('./get-port')
+const { error: logError } = require('./log')
 
 module.exports = async ({ filename, pkg, cli, restarting }) => {
   const { userPort, port, inUse } = await getPort(cli)
-
   const filepath = path.resolve(process.cwd(), filename)
-  const module = require(filepath)
 
-  const express = importCwd('express')
-  const app = express()
+  try {
+    const module = require(filepath)
 
-  module(app, express)
+    const express = importCwd('express')
+    const app = express()
 
-  const server = app.listen(port, () => {
-    if (!restarting) {
-      const message = listenMessage({
-        appName: pkg.name,
-        port,
-        inUse,
-        userPort
-      })
-      console.log(message)
-    }
-  })
+    module(app, express)
 
-  const sockets = []
+    const server = app.listen(port, () => {
+      if (!restarting) {
+        const message = listenMessage({
+          appName: pkg.name,
+          port,
+          inUse,
+          userPort
+        })
+        console.log(message)
+      }
+    })
 
-  server.on('connection', socket => {
-    const index = sockets.push(socket)
-    socket.once('close', () => sockets.splice(index, 1))
-  })
+    const sockets = []
 
-  require('../watch')({ filename, pkg, server, cli, sockets })
+    server.on('connection', socket => {
+      const index = sockets.push(socket)
+      socket.once('close', () => sockets.splice(index, 1))
+    })
+    require('../watch')({ filename, pkg, server, cli, sockets })
+  } catch (err) {
+    logError(err)
+  }
 }
