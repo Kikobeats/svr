@@ -1,33 +1,60 @@
 'use strict'
 
+const indentString = require('indent-string')
+const PrettyError = require('pretty-error')
 const getTimestamp = require('time-stamp')
 const logSymbols = require('log-symbols')
 const cleanStack = require('clean-stack')
+
 const logUpdate = require('log-update')
 const chalk = require('chalk')
 const ora = require('ora')
 
-const createSpinner = () => ora({ color: 'gray' })
 const getCurrentTimestamp = () => getTimestamp('HH:mm:ss')
+const createSpinner = () => ora({ color: 'gray' })
+const pe = new PrettyError()
+
+pe.appendStyle({
+  // this is a simple selector to the element that says 'Error'
+  'pretty-error > header > title > kind': {
+    background: 'none',
+    marginRight: 1
+  },
+
+  'pretty-error > header > colon': {
+    display: 'none'
+  },
+
+  'pretty-error > header > message': {
+    color: 'grey'
+  },
+
+  'pretty-error > trace > item > header > pointer > file': {
+    color: 'white'
+  },
+
+  'pretty-error > trace > item > header > pointer > colon': {
+    color: 'white'
+  },
+
+  'pretty-error > trace > item > header > pointer > line': {
+    color: 'white'
+  },
+
+  'pretty-error > trace > item > header > what': {
+    color: 'grey'
+  }
+})
 
 const OFFSET = '    '
 
 module.exports = {
   error (err) {
     const symbol = chalk.blue(logSymbols.error)
-    const timestamp = chalk.gray(getCurrentTimestamp())
-
-    const [message, ...stackTraces] = chalk
-      .gray(
-        cleanStack(err.stack)
-          .replace('Error: ', chalk.red('error '))
-          .replace('Cannot', 'cannot')
-      )
-      .split('\n')
-
-    const stackTrace = stackTraces.map(msg => `${OFFSET}${msg}`).join('')
-    const logMessage = `${OFFSET} ${symbol} ${timestamp} ${message}`
-    console.log(`${logMessage}\n${stackTrace}\n`)
+    const stack = cleanStack(err.stack)
+    const cleanErr = Object.assign({}, err, { stack })
+    const prettyErr = pe.render(cleanErr).replace('Error', symbol)
+    console.log(indentString(prettyErr, OFFSET.length))
   },
   restart ({ filename, forcing }) {
     const symbol = chalk.blue(logSymbols.info)
