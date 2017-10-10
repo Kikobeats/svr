@@ -9,11 +9,6 @@ const getMainFile = require('./get-main-file')
 
 require('update-notifier')({ pkg }).notify()
 
-const log = require('acho')({
-  types: require('acho-skin-cli'),
-  keyword: 'symbol'
-})
-
 const cli = require('meow')(
   {
     pkg,
@@ -37,11 +32,6 @@ const cli = require('meow')(
   }
 )
 ;(async () => {
-  try {
-    const { filename, pkg } = getMainFile(cli)
-    require('../serve')({ filename, pkg, cli, restarting: false })
-  } catch (err) {
-    log.error(err.message || err)
-    process.exit(1)
-  }
+  const { filename, pkg } = getMainFile(cli)
+  require('../serve')({ filename, pkg, cli, restarting: false })
 })()
