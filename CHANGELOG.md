@@ -1,3 +1,15 @@
+<a name="0.4.0"></a>
+# 0.4.0 (2017-11-10)
+
+* Add unify CLI log ([522d1ec](https://github.com/kikobeats/svr/commit/522d1ec))
+* Emit SIGNUSR2 to signal restart to user code ([14e4817](https://github.com/kikobeats/svr/commit/14e4817))
+* Improve error logging ([dd94a10](https://github.com/kikobeats/svr/commit/dd94a10))
+* Move log into correct domain ([eb41ce0](https://github.com/kikobeats/svr/commit/eb41ce0))
+* Remove unnecessary dep ([4a370d9](https://github.com/kikobeats/svr/commit/4a370d9))
+* Update deps ([8bfa9a9](https://github.com/kikobeats/svr/commit/8bfa9a9))
+
+
+
 <a name="0.3.0"></a>
 # 0.3.0 (2017-09-25)
 
