@@ -1,3 +1,19 @@
+<a name="0.4.1"></a>
+## 0.4.1 (2017-11-26)
+
+* Tweaks ([6eb548e](https://github.com/kikobeats/svr/commit/6eb548e))
+* Update compositor.json ([2193e3b](https://github.com/kikobeats/svr/commit/2193e3b))
+* Update compositor.json ([8bd57c4](https://github.com/kikobeats/svr/commit/8bd57c4))
+* Update compositor.json ([ee14de4](https://github.com/kikobeats/svr/commit/ee14de4))
+* Update compositor.json via compositor.io ([5f66115](https://github.com/kikobeats/svr/commit/5f66115))
+* Update meow interface ([7d1f0df](https://github.com/kikobeats/svr/commit/7d1f0df))
+* Update README.md ([bfe2fc7](https://github.com/kikobeats/svr/commit/bfe2fc7))
+* Update README.md ([7935e14](https://github.com/kikobeats/svr/commit/7935e14))
+* fix(package): update meow to version 4.0.0 ([694c127](https://github.com/kikobeats/svr/commit/694c127))
+* docs(readme): add Greenkeeper badge ([a187930](https://github.com/kikobeats/svr/commit/a187930))
+
+
+
 <a name="0.4.0"></a>
 # 0.4.0 (2017-11-10)
 
