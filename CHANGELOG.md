@@ -1,3 +1,12 @@
+<a name="0.4.2"></a>
+## 0.4.2 (2018-01-03)
+
+* Improve error log ([b92f768](https://github.com/kikobeats/svr/commit/b92f768))
+* fix(package): update boxen to version 1.3.0 ([81ce8d5](https://github.com/kikobeats/svr/commit/81ce8d5))
+* fix(package): update chokidar to version 2.0.0 ([10edbb9](https://github.com/kikobeats/svr/commit/10edbb9))
+
+
+
 <a name="0.4.1"></a>
 ## 0.4.1 (2017-11-26)
 
