@@ -9,7 +9,7 @@ const getPort = require('./get-port')
 
 module.exports = async ({ filename, pkg, cli, restarting }) => {
   if (restarting) process.emit('SIGNUSR2')
-  
+
   const { userPort, port, inUse } = await getPort(cli)
   const filepath = path.resolve(process.cwd(), filename)
 

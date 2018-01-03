@@ -53,8 +53,8 @@ module.exports = {
     const symbol = chalk.blue(logSymbols.error)
     const stack = cleanStack(err.stack)
     const cleanErr = Object.assign({}, err, { stack })
-    const prettyErr = pe.render(cleanErr).replace('Error', symbol)
-    console.log(indentString(prettyErr, OFFSET.length))
+    const prettyErr = pe.render(cleanErr)
+    console.log(indentString(`${symbol}${prettyErr}`, OFFSET.length))
   },
   restart ({ filename, forcing }) {
     const symbol = chalk.blue(logSymbols.info)
