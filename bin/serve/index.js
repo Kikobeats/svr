@@ -15,11 +15,10 @@ module.exports = async ({ filename, pkg, cli, restarting }) => {
 
   try {
     const module = require(filepath)
-
     const express = importCwd('express')
     const app = express()
 
-    module(app, express)
+    await module(app, express)
 
     const server = app.listen(port, () => {
       if (!restarting) {
