@@ -1,3 +1,10 @@
+<a name="0.5.0"></a>
+# 0.5.0 (2018-01-04)
+
+* wait for lazy setup ([ce28ec8](https://github.com/kikobeats/svr/commit/ce28ec8))
+
+
+
 <a name="0.4.2"></a>
 ## 0.4.2 (2018-01-03)
 
