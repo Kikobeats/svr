@@ -51,7 +51,6 @@ const cli = require('meow')(require('./help'), {
   const filepath = path.resolve(pwd, filename)
 
   require('../serve')({
-    restarting: false,
     filepath,
     pkg,
     pwd,
