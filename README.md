@@ -1,10 +1,9 @@
-# svr
-
-<p align="center">
+<h1>
   <br>
-  <img src="/demo.gif" alt="svr">
+  <img src="/static/logo.png" alt="svr">
   <br>
-</p>
+  <br>
+</h1>
 
 ![Last version](https://img.shields.io/github/tag/Kikobeats/svr.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/Kikobeats/svr/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/svr)

@@ -3,10 +3,10 @@
   "description": "Hot Module Replacement for HTTP Server",
   "homepage": "https://documentup.com/Kikobeats/svr",
   "version": "0.5.0",
+  "main": "bin/serve/index.js",
   "bin": {
     "svr": "bin/cli/index.js"
   },
-  "main": "bin/serve/index.js",
   "author": {
     "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
@@ -58,8 +58,15 @@
     "update-notifier": "~2.3.0"
   },
   "devDependencies": {
+    "concurrently": "latest",
     "coveralls": "latest",
     "git-dirty": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-strip-css-comments": "latest",
+    "gulp-uglify": "latest",
     "husky": "latest",
     "lint-staged": "latest",
     "mocha": "latest",
@@ -76,8 +83,11 @@
     "bin"
   ],
   "scripts": {
+    "build": "gulp build",
     "clean": "rm -rf node_modules",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "dev:docs": "concurrently \"gulp\" \"npm run dev:docs:server\"",
+    "dev:docs:server": "browser-sync start --server --files \"index.html, README.md, static/**/*.(css|js)\"",
     "lint": "standard-markdown && standard",
     "precommit": "lint-staged",
     "precommit-lint": "prettier-standard",
@@ -86,7 +96,6 @@
     "pretty": "prettier-standard {core,test,bin}/**/*.js",
     "test": "nyc mocha"
   },
-  "preferGlobal": true,
   "license": "MIT",
   "lint-staged": {
     "*.js": [
