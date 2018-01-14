@@ -1,3 +1,23 @@
+<a name="0.6.0"></a>
+# 0.6.0 (2018-01-14)
+
+* Add better gif ([dc934ad](https://github.com/kikobeats/svr/commit/dc934ad))
+* Add CNAME ([55fec47](https://github.com/kikobeats/svr/commit/55fec47))
+* Add more files to watch support ([1c7f9cc](https://github.com/kikobeats/svr/commit/1c7f9cc))
+* Add web ([71e7a94](https://github.com/kikobeats/svr/commit/71e7a94))
+* Improve CLI ([5f92c03](https://github.com/kikobeats/svr/commit/5f92c03))
+* Improve internal API ([b12948c](https://github.com/kikobeats/svr/commit/b12948c))
+* Remove unnecessary default ([abfd2db](https://github.com/kikobeats/svr/commit/abfd2db))
+* Tweak docs ([e1a164a](https://github.com/kikobeats/svr/commit/e1a164a))
+* Update ([e4ff4fe](https://github.com/kikobeats/svr/commit/e4ff4fe))
+* Update compositor.json via compositor.io ([2464301](https://github.com/kikobeats/svr/commit/2464301))
+* Update compositor.json via compositor.io ([1952342](https://github.com/kikobeats/svr/commit/1952342))
+* Update compositor.json via compositor.io ([eda876e](https://github.com/kikobeats/svr/commit/eda876e))
+* Update compositor.json via compositor.io ([60941f4](https://github.com/kikobeats/svr/commit/60941f4))
+* Update README.md ([53dffd8](https://github.com/kikobeats/svr/commit/53dffd8))
+
+
+
 <a name="0.5.0"></a>
 # 0.5.0 (2018-01-04)
 
