@@ -11,6 +11,7 @@ module.exports = ({
   pkg,
   pwd,
   cli,
+  watchFiles,
   watcher,
   ignored
 }) => {
@@ -50,6 +51,13 @@ module.exports = ({
   }
 
   // Restart the server
-  require('../serve')({ filepath, pkg, pwd, cli, restarting: true })
+  require('../serve')({
+    filepath,
+    pkg,
+    pwd,
+    cli,
+    restarting: true,
+    watchFiles
+  })
   spinner.stop()
 }

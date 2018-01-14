@@ -21,9 +21,11 @@ module.exports = `
     '[default=false]'
   )}
 
-    -i  --ignore        Ignore watching a file, directory, or glob ${chalk.gray(
+    -i,  --ignore       Ignore watching a file, directory, or glob ${chalk.gray(
     '[default=.gitignore, pkg.ignore]'
   )}
+
+    -w, --watch         Add more files than the project path to watch
 
     -v, --version       Output the version number
 
@@ -37,6 +39,12 @@ module.exports = `
 
     $ svr
 
-  ${chalk.green('–')} Start specifing the file to watch
-    $ svr ${chalk.gray('src/index.js')}
+  ${chalk.green('–')} Start on the current directory specifing your main file
+    $ svr ${chalk.gray('src/server/routes.js')}
+
+  ${chalk.green('–')} Add an external project file to watch
+    $ svr ${chalk.gray('-w node_modules/api-documentation/*.md')}
+
+  ${chalk.green('–')} Add more project files to be ignored
+    $ svr ${chalk.gray('-i .cache -i public')}
 `

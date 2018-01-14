@@ -28,6 +28,7 @@ const doRestart = ({
   pwd,
   forcing,
   cli,
+  watchFiles,
   watcher
 }) => {
   const filename = path.basename(filepath)
@@ -35,6 +36,7 @@ const doRestart = ({
   destroySockets(sockets)
   server.close(
     restartServer.bind(this, {
+      watchFiles,
       spinner,
       ignored,
       filepath,
@@ -47,16 +49,27 @@ const doRestart = ({
   )
 }
 
-module.exports = ({ filepath, pwd, pkg, server, sockets, ...opts }) => {
+module.exports = ({
+  filepath,
+  watchFiles,
+  pwd,
+  pkg,
+  server,
+  sockets,
+  ...opts
+}) => {
   const { watchConfig, rawIgnored: ignored } = getWatchConfig({
     pwd,
     pkg,
     ...opts
   })
-  const watcher = watch(pwd, watchConfig)
+
+  const toWatch = [].concat(watchFiles, pwd)
+  const watcher = watch(toWatch, watchConfig)
 
   const restart = ({ forcing }) =>
     doRestart({
+      watchFiles,
       ignored,
       sockets,
       server,

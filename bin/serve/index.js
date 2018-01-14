@@ -11,6 +11,7 @@ module.exports = async ({
   pkg,
   port: originalPort,
   host,
+  watchFiles,
   restarting = false,
   ...opts
 }) => {
@@ -42,7 +43,7 @@ module.exports = async ({
       const index = sockets.push(socket)
       socket.once('close', () => sockets.splice(index, 1))
     })
-    require('../watch')({ filepath, pkg, server, sockets, ...opts })
+    require('../watch')({ watchFiles, filepath, pkg, server, sockets, ...opts })
   } catch (err) {
     logError(err)
   }

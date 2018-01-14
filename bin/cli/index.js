@@ -33,6 +33,11 @@ const cli = require('meow')(require('./help'), {
       alias: 'H',
       default: '::'
     },
+    watch: {
+      alias: 'w',
+      type: 'array',
+      default: []
+    },
     pwd: {
       default: process.cwd()
     }
@@ -40,7 +45,7 @@ const cli = require('meow')(require('./help'), {
 })
 ;(async () => {
   const { input } = cli
-  const { pwd, port, ...opts } = cli.flags
+  const { pwd, port, watch: watchFiles, ...opts } = cli.flags
   const { filename, pkg } = getMainFile({ input, pwd })
 
   const filepath = path.resolve(pwd, filename)
@@ -51,6 +56,7 @@ const cli = require('meow')(require('./help'), {
     pkg,
     pwd,
     port,
+    watchFiles,
     ...opts
   })
 })()
