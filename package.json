@@ -6,6 +6,7 @@
   "bin": {
     "svr": "bin/cli/index.js"
   },
+  "main": "bin/serve/index.js",
   "author": {
     "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"

@@ -7,14 +7,13 @@ const path = require('path')
 
 const isDirSync = path => existsSync(path) && statSync(path).isDirectory()
 
-const getIgnoredFiles = ({ cli, pkg }) => {
+const getIgnoredFiles = ({ ignore = [], pkg, pwd }) => {
   const set = new Set()
   const addIgnore = value => set.add(value)
 
-  const gitignore = path.resolve(process.cwd(), '.gitignore')
+  const gitignore = path.resolve(pwd, '.gitignore')
   getIgnoredFromGit(gitignore).forEach(addIgnore)
-
-  if (cli.flags.ignore) cli.flags.ignore.forEach(addIgnore)
+  ;[].concat(ignore).forEach(addIgnore)
   if (pkg.ignore) pkg.ignore.forEach(addIgnore)
 
   ignoredDirectories.forEach(addIgnore)
@@ -22,7 +21,7 @@ const getIgnoredFiles = ({ cli, pkg }) => {
   const rawIgnored = Array.from(set)
 
   const ignored = rawIgnored.reduce((acc, ignore) => {
-    const file = path.resolve(process.cwd(), ignore)
+    const file = path.resolve(pwd, ignore)
     acc.push(isDirSync(file) ? `**/${path.basename(file)}/**` : ignore)
     return acc
   }, [])
@@ -30,9 +29,8 @@ const getIgnoredFiles = ({ cli, pkg }) => {
   return { ignored, rawIgnored }
 }
 
-module.exports = ({ cli, pkg }) => {
-  const { poll: usePolling } = cli.flags
-  const { ignored, rawIgnored } = getIgnoredFiles({ cli, pkg })
+module.exports = ({ poll: usePolling, ...opts }) => {
+  const { ignored, rawIgnored } = getIgnoredFiles(opts)
 
   const watchConfig = {
     usePolling,

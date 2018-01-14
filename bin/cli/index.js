@@ -19,7 +19,7 @@ const cli = require('meow')(
       port: {
         type: 'number',
         alias: 'p',
-        default: 3000
+        default: process.env.port || process.env.PORT || 3000
       },
       poll: {
         type: 'boolean',
@@ -27,7 +27,9 @@ const cli = require('meow')(
         default: false
       },
       ignore: {
-        alias: 'i'
+        alias: 'i',
+        type: 'array',
+        default: []
       },
       host: {
         alias: 'H'
@@ -37,11 +39,24 @@ const cli = require('meow')(
       },
       silent: {
         alias: 's'
+      },
+      pwd: {
+        default: process.cwd()
       }
     }
   }
 )
 ;(async () => {
   const { filename, pkg } = getMainFile(cli)
-  require('../serve')({ filename, pkg, cli, restarting: false })
+  const { pwd, port, ...opts } = cli.flags
+  const filepath = path.resolve(pwd, filename)
+
+  require('../serve')({
+    restarting: false,
+    filepath,
+    pkg,
+    pwd,
+    port,
+    ...opts
+  })
 })()

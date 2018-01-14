@@ -4,7 +4,16 @@ const clearModule = require('clear-module')
 const anymatch = require('anymatch')
 const path = require('path')
 
-module.exports = ({ spinner, filename, pkg, cli, watcher, ignored }) => {
+module.exports = ({
+  spinner,
+  filepath,
+  filename,
+  pkg,
+  pwd,
+  cli,
+  watcher,
+  ignored
+}) => {
   const watched = watcher.getWatched()
   let toDelete = []
 
@@ -25,7 +34,7 @@ module.exports = ({ spinner, filename, pkg, cli, watcher, ignored }) => {
 
   toDelete = toDelete
     .filter(filename => !matchers(path.basename(filename)))
-    .map(filename => path.resolve(process.cwd(), filename))
+    .map(filename => path.resolve(pwd, filename))
 
   // Remove file that changed from the `require` cache
   for (const item of toDelete) {
@@ -41,6 +50,6 @@ module.exports = ({ spinner, filename, pkg, cli, watcher, ignored }) => {
   }
 
   // Restart the server
-  require('../serve')({ filename, pkg, cli, restarting: true })
+  require('../serve')({ filepath, pkg, pwd, cli, restarting: true })
   spinner.stop()
 }
