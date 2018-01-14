@@ -16,9 +16,19 @@
 
 > Hot Module replacement (HMR) capabilities for any HTTP Server.
 
+The idea behind this project is **smart reload**, avoiding reload completely the process. It just reload the code that changes!
+
 It's similar [micro-dev](https://github.com/zeit/micro-dev), but out of the box for any framework that use [http.Server.listen()](https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback) interface.
 
-## Install
+## Installation
+
+You can install it as global
+
+```bash
+$ npm install svr --global
+```
+
+Or use it as part of your development workflow as a `devDependency`:
 
 ```bash
 $ npm install svr --save-dev
@@ -26,7 +36,46 @@ $ npm install svr --save-dev
 
 ## Usage
 
-### Development
+### Getting Started
+
+After installation, just call it:
+
+```bash
+$ svr
+```
+
+We recommend add **svr** as npm script:
+
+```json
+{
+  "scripts": {
+    "dev": "srv"
+  }
+}
+```
+
+Now, running `npm run dev` it will be start your HRM development server:
+
+```bash
+$ npm start
+
+  ┌───────────────────────────────────────────────────┐
+  │                                                   │
+  │   my-express-api is running!                      │
+  │                                                   │
+  │   • Local:            http://localhost:3000       │
+  │   • On Your Network:  http://192.168.1.106:3000   │
+  │                                                   │
+  └───────────────────────────────────────────────────┘
+```
+
+**svr** is assuming you have a `main` file declared in your `package.json` in the project directory.
+
+Otherwise, you can provide the file path as first argument:
+
+```bash
+$ svr src/server/routes.js
+```
 
 The only requirement is define the main file of your server as exported function that follow this interface:
 
@@ -35,6 +84,83 @@ module.exports = (app, express) => {
 /* your awesome code here */
 }
 ```
+
+If your project directory is different from the current directory you can specify it as well using `-d` or `--cwd` flag:
+
+```bash
+$ svr src/server/routes.js --cwd=~/Projects/my-express-api
+```
+
+Type  `svr --help` to get all the information.
+
+### Watching for changes
+
+After start, whatever file modification in the project directory will be listened by **svr** automagically:
+
+```bash
+  ┌───────────────────────────────────────────────────┐
+  │                                                   │
+  │   my-express-api is running!                      │
+  │                                                   │
+  │   • Local:            http://localhost:3000       │
+  │   • On Your Network:  http://192.168.1.106:3000   │
+  │                                                   │
+  └───────────────────────────────────────────────────┘
+  
+   ℹ 18:32:42 modified index.js
+```
+
+If you need to reload the server on demand, just type `rs`:
+
+```bash
+  ┌───────────────────────────────────────────────────┐
+  │                                                   │
+  │   my-express-api is running!                      │
+  │                                                   │
+  │   • Local:            http://localhost:3000       │
+  │   • On Your Network:  http://192.168.1.106:3000   │
+  │                                                   │
+  └───────────────────────────────────────────────────┘
+  
+   ℹ 18:32:42 modified index.js
+   rs
+   ℹ 18:34:07 restart index.js
+```
+
+**svr** only will be listen files in the current directory by default.
+
+You can use `-w` or `--watch` to add more file path to be listened
+
+```bash
+$ svr src/server/routes.js
+```
+
+Type  `svr --help` to get all the information.
+
+### Ignoring files
+
+**svr** takes into consideration ignore non relevant files.
+
+By default, it will be to ignore:
+
+- well known files to ignore, like `node_modules`, `.git`, etc.
+- `.gitignore` declarations.
+- `ignored` field in your `package.json`.
+
+You can declare:
+
+- Relative or absolute paths.
+- Glob patterns.
+
+If you need to add a specific file to ignore, use `i`  or `--ignore` flag:
+
+```bash
+$ svr -i .cache -i public
+```
+
+## Tips
+
+### Development Server
 
 This could be a good start point for a HTTP server:
 
@@ -63,70 +189,9 @@ module.exports = (app, express) => {
 }
 ```
 
-After that, you need to call `svr`. We recommend add `svr` as npm script:
+### Production Server
 
-```json
-{
-  "scripts": {
-    "dev": "srv"
-  }
-}
-```
-
-Running `npm run dev` you start your HRM development server:
-
-```bash
-$ npm start
-
-  ┌───────────────────────────────────────────────────┐
-  │                                                   │
-  │   my-express-api is running!                      │
-  │                                                   │
-  │   • Local:            http://localhost:3000       │
-  │   • On Your Network:  http://192.168.1.106:3000   │
-  │                                                   │
-  └───────────────────────────────────────────────────┘
-```
-
-`svr` it's assuming main file is called `index.js` in the current path. Otherwise, you can provide the file path as first argument.
-
-Now whatever file modification in the current directory is listened by the `svr` automagically:
-
-```bash
-  ┌───────────────────────────────────────────────────┐
-  │                                                   │
-  │   my-express-api is running!                      │
-  │                                                   │
-  │   • Local:            http://localhost:3000       │
-  │   • On Your Network:  http://192.168.1.106:3000   │
-  │                                                   │
-  └───────────────────────────────────────────────────┘
-  
-   ℹ 18:32:42 modified index.js
-```
-
-It takes in consideration your `.gitignore` files, so it only will reload the right files.
-
-Using `svr --watch` you can add more files to be watched, but you need to reload the server in any time, just type `rs`:
-
-```bash
-  ┌───────────────────────────────────────────────────┐
-  │                                                   │
-  │   my-express-api is running!                      │
-  │                                                   │
-  │   • Local:            http://localhost:3000       │
-  │   • On Your Network:  http://192.168.1.106:3000   │
-  │                                                   │
-  └───────────────────────────────────────────────────┘
-  
-   ℹ 18:32:42 modified index.js
-   rs
-   ℹ 18:34:07 restart index.js
-```
-
-### Production
-
-`svr` is oriented for development scenario. 
+**svr** is oriented just for development scenarios.
 
 Under production, simply create the boostraping server that you need.
 
@@ -159,7 +224,7 @@ Just add it as `npm start` script
 }
 ```
 
-That's all. You're taking the best of the two worlds: Developer Experience for development and tiny bundle for production.
+That's all.
 
 ## License
 
