@@ -11,44 +11,38 @@ const getMainFile = require('./get-main-file')
 
 require('update-notifier')({ pkg }).notify()
 
-const cli = require('meow')(
-  require('fs').readFileSync(path.join(__dirname, 'help.txt'), 'utf8'),
-  {
-    pkg,
-    flags: {
-      port: {
-        type: 'number',
-        alias: 'p',
-        default: process.env.port || process.env.PORT || 3000
-      },
-      poll: {
-        type: 'boolean',
-        alias: 'L',
-        default: false
-      },
-      ignore: {
-        alias: 'i',
-        type: 'array',
-        default: []
-      },
-      host: {
-        alias: 'H'
-      },
-      cold: {
-        alias: 'c'
-      },
-      silent: {
-        alias: 's'
-      },
-      pwd: {
-        default: process.cwd()
-      }
+const cli = require('meow')(require('./help'), {
+  pkg,
+  flags: {
+    port: {
+      type: 'number',
+      alias: 'p',
+      default: process.env.port || process.env.PORT || 3000
+    },
+    poll: {
+      type: 'boolean',
+      alias: 'L',
+      default: false
+    },
+    ignore: {
+      alias: 'i',
+      type: 'array',
+      default: []
+    },
+    host: {
+      alias: 'H',
+      default: '::'
+    },
+    pwd: {
+      default: process.cwd()
     }
   }
-)
+})
 ;(async () => {
-  const { filename, pkg } = getMainFile(cli)
+  const { input } = cli
   const { pwd, port, ...opts } = cli.flags
+  const { filename, pkg } = getMainFile({ input, pwd })
+
   const filepath = path.resolve(pwd, filename)
 
   require('../serve')({
