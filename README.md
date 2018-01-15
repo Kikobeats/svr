@@ -2,8 +2,8 @@
   <br>
   <img src="/static/logo.png" alt="svr">
   <br>
-  <img src="/demo.gif" alt="svr">
   <br>
+  <img src="/demo.gif" alt="svr">
   <br>
 </h1>
 
