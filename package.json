@@ -90,7 +90,6 @@
     "dev:docs:server": "browser-sync start --server --files \"index.html, README.md, static/**/*.(css|js)\"",
     "lint": "standard-markdown && standard",
     "precommit": "lint-staged",
-    "precommit-lint": "prettier-standard",
     "prelint": "npm run pretty",
     "pretest": "npm run lint",
     "pretty": "prettier-standard {core,test,bin}/**/*.js",
@@ -99,7 +98,7 @@
   "license": "MIT",
   "lint-staged": {
     "*.js": [
-      "precommit-lint",
+      "prettier-standard",
       "git add"
     ]
   },
