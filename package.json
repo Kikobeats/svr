@@ -55,7 +55,7 @@
     "ora": "~2.0.0",
     "pretty-error": "~2.1.1",
     "time-stamp": "~2.0.0",
-    "update-notifier": "~2.4.0"
+    "update-notifier": "~2.5.0"
   },
   "devDependencies": {
     "concurrently": "latest",
