@@ -1,3 +1,20 @@
+<a name="0.6.1"></a>
+## 0.6.1 (2018-04-18)
+
+* Add copy clipboard button ([cc64453](https://github.com/kikobeats/svr/commit/cc64453))
+* Ensure to pass user port for restarting server ([0a516f4](https://github.com/kikobeats/svr/commit/0a516f4))
+* Update precommit ([6194670](https://github.com/kikobeats/svr/commit/6194670))
+* Update README.md ([c8800b1](https://github.com/kikobeats/svr/commit/c8800b1))
+* Update README.md ([0a3c18a](https://github.com/kikobeats/svr/commit/0a3c18a))
+* fix(package): update chalk to version 2.4.0 ([7786306](https://github.com/kikobeats/svr/commit/7786306))
+* fix(package): update log-symbols to version 2.2.0 ([3d2f402](https://github.com/kikobeats/svr/commit/3d2f402))
+* fix(package): update ora to version 1.4.0 ([c453967](https://github.com/kikobeats/svr/commit/c453967))
+* fix(package): update ora to version 2.0.0 ([eccc8a2](https://github.com/kikobeats/svr/commit/eccc8a2))
+* fix(package): update update-notifier to version 2.4.0 ([c53b722](https://github.com/kikobeats/svr/commit/c53b722))
+* fix(package): update update-notifier to version 2.5.0 ([3bf592b](https://github.com/kikobeats/svr/commit/3bf592b))
+
+
+
 <a name="0.6.0"></a>
 # 0.6.0 (2018-01-14)
 
