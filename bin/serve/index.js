@@ -43,7 +43,15 @@ module.exports = async ({
       const index = sockets.push(socket)
       socket.once('close', () => sockets.splice(index, 1))
     })
-    require('../watch')({ watchFiles, filepath, pkg, server, sockets, ...opts })
+    require('../watch')({
+      watchFiles,
+      filepath,
+      pkg,
+      server,
+      sockets,
+      port,
+      ...opts
+    })
   } catch (err) {
     logError(err)
   }

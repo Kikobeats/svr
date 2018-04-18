@@ -29,7 +29,8 @@ const doRestart = ({
   forcing,
   cli,
   watchFiles,
-  watcher
+  watcher,
+  port
 }) => {
   const filename = path.basename(filepath)
   const spinner = logRestart({ filename, forcing })
@@ -44,7 +45,8 @@ const doRestart = ({
       pkg,
       pwd,
       cli,
-      watcher
+      watcher,
+      port
     })
   )
 }

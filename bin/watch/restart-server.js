@@ -12,6 +12,7 @@ module.exports = ({
   pwd,
   cli,
   watchFiles,
+  port,
   watcher,
   ignored
 }) => {
@@ -52,6 +53,7 @@ module.exports = ({
 
   // Restart the server
   require('../serve')({
+    port,
     filepath,
     pkg,
     pwd,
