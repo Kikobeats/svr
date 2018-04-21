@@ -1,3 +1,11 @@
+<a name="0.6.2"></a>
+## 0.6.2 (2018-04-21)
+
+* Ensure to handle server crash propertly ([5cdef17](https://github.com/kikobeats/svr/commit/5cdef17))
+* Update prod server ([2adbebb](https://github.com/kikobeats/svr/commit/2adbebb))
+
+
+
 <a name="0.6.1"></a>
 ## 0.6.1 (2018-04-18)
 
