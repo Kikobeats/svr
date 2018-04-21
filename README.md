@@ -7,6 +7,8 @@
   <br>
 </h1>
 
+
+
 ![Last version](https://img.shields.io/github/tag/Kikobeats/svr.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/Kikobeats/svr/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/svr)
 [![Dependency status](https://img.shields.io/david/Kikobeats/svr.svg?style=flat-square)](https://david-dm.org/Kikobeats/svr)
@@ -106,7 +108,7 @@ After start, whatever file modification in the project directory will be listene
   │   • On Your Network:  http://192.168.1.106:3000   │
   │                                                   │
   └───────────────────────────────────────────────────┘
-  
+
    ℹ 18:32:42 modified index.js
 ```
 
@@ -121,7 +123,7 @@ If you need to reload the server on demand, just type `rs`:
   │   • On Your Network:  http://192.168.1.106:3000   │
   │                                                   │
   └───────────────────────────────────────────────────┘
-  
+
    ℹ 18:32:42 modified index.js
    rs
    ℹ 18:34:07 restart index.js
@@ -195,9 +197,11 @@ module.exports = (app, express) => {
 
 Under production, simply create the boostraping server that you need.
 
-For example, you can take this `server.js` as production server:
+For example, let's create a `bin/server` as production server:
 
-```js
+```
+#!/usr/bin/env node
+
 'use strict'
 
 const express = require('express')
@@ -219,7 +223,7 @@ Just add it as `npm start` script
 ```
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "bin/server"
   }
 }
 ```
