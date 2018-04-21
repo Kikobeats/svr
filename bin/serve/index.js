@@ -1,10 +1,7 @@
 'use strict'
 
-const importCwd = require('import-cwd')
-
-const { error: logError } = require('../cli/log')
-const listenMessage = require('./listen-message')
 const getPort = require('./get-port')
+const listen = require('./listen')
 
 module.exports = async ({
   filepath,
@@ -17,42 +14,29 @@ module.exports = async ({
 }) => {
   if (restarting) process.emit('SIGNUSR2')
   const { userPort, port, inUse } = await getPort(originalPort)
+  const server = await listen({
+    userPort,
+    inUse,
+    pkg,
+    port,
+    host,
+    restarting,
+    filepath
+  })
+  const sockets = []
 
-  try {
-    const module = require(filepath)
-    const express = importCwd('express')
-    const app = express()
+  server.on('connection', socket => {
+    const index = sockets.push(socket)
+    socket.once('close', () => sockets.splice(index, 1))
+  })
 
-    await module(app, express)
-
-    const server = app.listen(port, host, () => {
-      if (!restarting) {
-        const message = listenMessage({
-          appName: pkg.name,
-          userPort,
-          port,
-          inUse
-        })
-        console.log(message)
-      }
-    })
-
-    const sockets = []
-
-    server.on('connection', socket => {
-      const index = sockets.push(socket)
-      socket.once('close', () => sockets.splice(index, 1))
-    })
-    require('../watch')({
-      watchFiles,
-      filepath,
-      pkg,
-      server,
-      sockets,
-      port,
-      ...opts
-    })
-  } catch (err) {
-    logError(err)
-  }
+  require('../watch')({
+    watchFiles,
+    filepath,
+    pkg,
+    server,
+    sockets,
+    port,
+    ...opts
+  })
 }
