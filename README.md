@@ -7,7 +7,6 @@
   <br>
 </h1>
 
-
 ![Last version](https://img.shields.io/github/tag/Kikobeats/svr.svg?style=flat-square)
 [![Build Status](https://img.shields.io/travis/Kikobeats/svr/master.svg?style=flat-square)](https://travis-ci.org/Kikobeats/svr)
 [![Dependency status](https://img.shields.io/david/Kikobeats/svr.svg?style=flat-square)](https://david-dm.org/Kikobeats/svr)
@@ -15,17 +14,17 @@
 [![NPM Status](https://img.shields.io/npm/dm/svr.svg?style=flat-square)](https://www.npmjs.org/package/svr)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> Hot Module replacement (HMR) capabilities for any HTTP Server.
+> Development HTTP server done right
+
+## Features
+
+- **Hot Reloading**: Automagically reload modified files, not the process.
+- **Pretty Errors**: They will be beautifully rendered.
+- **Port Selection**: Automatic detection and use of an open port (if the specified one is in use).
 
 The idea behind this project is **smart reload**, avoiding reload completely the process. It just reload the code that changes!
 
 It's similar [micro-dev](https://github.com/zeit/micro-dev), but out of the box for any framework that use [http.Server.listen()](https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback) interface.
-
-## Features
-
-- Automagically reload modified files (not the entire process as nodemon, so it makes it significantly faster).
-- Auto detection of files to ignore (based on .gitignore et all)
-- Pretty error format for bring the best development experience.
 
 ## Installation
 
