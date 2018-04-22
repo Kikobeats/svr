@@ -166,7 +166,7 @@ $ svr -i .cache -i public
 
 ## Tips
 
-### Development Server
+### Main file
 
 This could be a good start point for a HTTP server:
 
