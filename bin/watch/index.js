@@ -86,8 +86,11 @@ module.exports = ({
 
   watcher.once(
     'all',
-    debounce((event, filename) => restart({ forcing: false, filename: path.basename(filename) })),
-    10
+    debounce(
+      (event, filename) =>
+        restart({ forcing: false, filename: path.relative(pwd, filename) }),
+      10
+    )
   )
 
   if (!firsTime) {
