@@ -1,3 +1,15 @@
+<a name="0.6.3"></a>
+## 0.6.3 (2018-04-24)
+
+* Add features section ([ac48928](https://github.com/kikobeats/svr/commit/ac48928))
+* Print the relative filepath ([b586d46](https://github.com/kikobeats/svr/commit/b586d46))
+* Update ([a15e72f](https://github.com/kikobeats/svr/commit/a15e72f))
+* Update meta ([4425a13](https://github.com/kikobeats/svr/commit/4425a13))
+* Update README.md ([b19b7dc](https://github.com/kikobeats/svr/commit/b19b7dc))
+* fix(log): show correct filename when a file change ([db5f02b](https://github.com/kikobeats/svr/commit/db5f02b))
+
+
+
 <a name="0.6.2"></a>
 ## 0.6.2 (2018-04-21)
 
