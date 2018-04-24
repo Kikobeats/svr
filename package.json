@@ -1,6 +1,6 @@
 {
   "name": "svr",
-  "description": "Hot Module Replacement for HTTP Server",
+  "description": "HTTP development server done right",
   "homepage": "https://documentup.com/Kikobeats/svr",
   "version": "0.6.3",
   "main": "bin/serve/index.js",

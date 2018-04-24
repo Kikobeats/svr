@@ -14,7 +14,7 @@
 [![NPM Status](https://img.shields.io/npm/dm/svr.svg?style=flat-square)](https://www.npmjs.org/package/svr)
 [![Donate](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://paypal.me/Kikobeats)
 
-> Development HTTP server done right
+> HTTP development server done right
 
 ## Features
 
