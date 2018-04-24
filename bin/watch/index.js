@@ -23,6 +23,7 @@ const doRestart = ({
   ignored,
   sockets,
   server,
+  filename,
   filepath,
   pkg,
   pwd,
@@ -32,7 +33,6 @@ const doRestart = ({
   watcher,
   port
 }) => {
-  const filename = path.basename(filepath)
   const spinner = logRestart({ filename, forcing })
   destroySockets(sockets)
   server.close(
@@ -69,12 +69,13 @@ module.exports = ({
   const toWatch = [].concat(watchFiles, pwd)
   const watcher = watch(toWatch, watchConfig)
 
-  const restart = ({ forcing }) =>
+  const restart = ({ forcing, filename }) =>
     doRestart({
       watchFiles,
       ignored,
       sockets,
       server,
+      filename,
       filepath,
       pwd,
       pkg,
@@ -85,7 +86,7 @@ module.exports = ({
 
   watcher.once(
     'all',
-    debounce((event, filename) => restart({ forcing: false })),
+    debounce((event, filename) => restart({ forcing: false, filename: path.basename(filename) })),
     10
   )
 
