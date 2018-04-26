@@ -1,3 +1,12 @@
+<a name="0.6.4"></a>
+## 0.6.4 (2018-04-26)
+
+* Update copy ([bba2917](https://github.com/kikobeats/svr/commit/bba2917))
+* Use load-json-file instead of json-future ([fbcfbe0](https://github.com/kikobeats/svr/commit/fbcfbe0)), closes [#21](https://github.com/kikobeats/svr/issues/21)
+* fix(package): update meow to version 5.0.0 ([17cca3d](https://github.com/kikobeats/svr/commit/17cca3d))
+
+
+
 <a name="0.6.3"></a>
 ## 0.6.3 (2018-04-24)
 
