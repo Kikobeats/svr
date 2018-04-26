@@ -48,7 +48,7 @@
     "import-cwd": "~2.1.0",
     "indent-string": "~3.2.0",
     "ip": "~1.1.5",
-    "json-future": "~2.1.2",
+    "load-json-file": "~4.0.0",
     "log-symbols": "~2.2.0",
     "log-update": "~2.3.0",
     "meow": "~5.0.0",
