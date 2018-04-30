@@ -1,11 +1,8 @@
 'use strict'
 
 const ignoredDirectories = require('ignore-by-default').directories()
-const { existsSync, statSync } = require('fs')
 const getIgnoredFromGit = require('ignored')
 const path = require('path')
-
-const isDirSync = path => existsSync(path) && statSync(path).isDirectory()
 
 const getIgnoredFiles = ({ ignore = [], pkg, pwd }) => {
   const set = new Set()
@@ -20,17 +17,15 @@ const getIgnoredFiles = ({ ignore = [], pkg, pwd }) => {
 
   const rawIgnored = Array.from(set)
 
-  const ignored = rawIgnored.reduce((acc, ignore) => {
+  return rawIgnored.reduce((acc, ignore) => {
     const file = path.resolve(pwd, ignore)
-    acc.push(isDirSync(file) ? `**/${path.basename(file)}/**` : ignore)
+    acc.push(file)
     return acc
   }, [])
-
-  return { ignored, rawIgnored }
 }
 
 module.exports = ({ poll: usePolling, ...opts }) => {
-  const { ignored, rawIgnored } = getIgnoredFiles(opts)
+  const ignored = getIgnoredFiles(opts)
 
   const watchConfig = {
     usePolling,
@@ -38,5 +33,5 @@ module.exports = ({ poll: usePolling, ...opts }) => {
     ignored
   }
 
-  return { watchConfig, ignored, rawIgnored }
+  return watchConfig
 }

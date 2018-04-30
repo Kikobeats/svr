@@ -60,7 +60,7 @@ module.exports = ({
   sockets,
   ...opts
 }) => {
-  const { watchConfig, rawIgnored: ignored } = getWatchConfig({
+  const watchConfig = getWatchConfig({
     pwd,
     pkg,
     ...opts
@@ -72,7 +72,7 @@ module.exports = ({
   const restart = ({ forcing, filename }) =>
     doRestart({
       watchFiles,
-      ignored,
+      ignored: watchConfig.ignore,
       sockets,
       server,
       filename,
