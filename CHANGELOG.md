@@ -1,3 +1,10 @@
+<a name="0.7.0"></a>
+# 0.7.0 (2018-04-30)
+
+* Simplify ignore files ([0f58a0c](https://github.com/kikobeats/svr/commit/0f58a0c))
+
+
+
 <a name="0.6.4"></a>
 ## 0.6.4 (2018-04-26)
 
