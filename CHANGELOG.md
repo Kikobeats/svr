@@ -1,3 +1,11 @@
+<a name="0.7.1"></a>
+## 0.7.1 (2018-07-11)
+
+* fix(package): update clear-module to version 3.0.0 ([b91d8e5](https://github.com/kikobeats/svr/commit/b91d8e5))
+* fix(package): update load-json-file to version 5.0.0 ([7bab6c3](https://github.com/kikobeats/svr/commit/7bab6c3))
+
+
+
 <a name="0.7.0"></a>
 # 0.7.0 (2018-04-30)
 
