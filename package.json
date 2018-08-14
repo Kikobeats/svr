@@ -88,7 +88,7 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "dev:docs": "concurrently \"gulp\" \"npm run dev:docs:server\"",
     "dev:docs:server": "browser-sync start --server --files \"index.html, README.md, static/**/*.(css|js)\"",
-    "lint": "standard-markdown && standard",
+    "lint": "standard-markdown README.md && standard",
     "precommit": "lint-staged",
     "prelint": "npm run pretty",
     "pretest": "npm run lint",
