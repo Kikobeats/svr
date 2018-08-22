@@ -54,7 +54,7 @@
     "meow": "~5.0.0",
     "ora": "~3.0.0",
     "pretty-error": "~2.1.1",
-    "time-stamp": "~2.0.0",
+    "time-stamp": "~2.1.0",
     "update-notifier": "~2.5.0"
   },
   "devDependencies": {
