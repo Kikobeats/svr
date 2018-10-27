@@ -58,8 +58,14 @@
     "update-notifier": "~2.5.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "latest",
+    "@commitlint/config-conventional": "latest",
+    "ci-publish": "latest",
     "concurrently": "latest",
+    "conventional-github-releaser": "latest",
     "coveralls": "latest",
+    "finepack": "latest",
+    "git-authors-cli": "latest",
     "git-dirty": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -70,11 +76,13 @@
     "husky": "latest",
     "lint-staged": "latest",
     "mocha": "latest",
+    "npm-check-updates": "latest",
     "nyc": "latest",
     "prettier-standard": "latest",
     "should": "latest",
-    "standard": "11",
-    "standard-markdown": "latest"
+    "standard": "latest",
+    "standard-markdown": "latest",
+    "standard-version": "latest"
   },
   "engines": {
     "node": ">= 8"
@@ -89,22 +97,51 @@
     "dev:docs": "concurrently \"gulp\" \"npm run dev:docs:server\"",
     "dev:docs:server": "browser-sync start --server --files \"index.html, README.md, static/**/*.(css|js)\"",
     "lint": "standard-markdown README.md && standard",
+    "postrelease": "npm run release:tags && npm run release:github && ci-publish",
     "precommit": "lint-staged",
     "prelint": "npm run pretty",
+    "prerelease": "npm run update:check && git-authors-cli",
     "pretest": "npm run lint",
     "pretty": "prettier-standard {core,test,bin}/**/*.js",
-    "test": "nyc mocha"
+    "release": "git add package.json && standard-version -a",
+    "release:github": "conventional-github-releaser -p angular",
+    "release:tags": "git push --follow-tags origin HEAD:master",
+    "test": "nyc mocha",
+    "update": "ncu -a",
+    "update:check": "ncu -- --error-level 2"
   },
   "license": "MIT",
-  "lint-staged": {
-    "*.js": [
-      "prettier-standard",
-      "git add"
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "package.json": [
+        "finepack",
+        "git add"
+      ],
+      "*.js": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
   },
   "standard": {
     "env": [
       "mocha"
     ]
+  },
+  "standard-version": {
+    "scripts": {
+      "prechangelog": "git-authors-cli"
+    }
   }
 }
