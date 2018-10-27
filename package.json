@@ -2,7 +2,7 @@
   "name": "svr",
   "description": "HTTP development server done right",
   "homepage": "https://documentup.com/Kikobeats/svr",
-  "version": "0.7.1",
+  "version": "0.7.2",
   "main": "bin/serve/index.js",
   "bin": {
     "svr": "bin/cli/index.js"
@@ -143,5 +143,8 @@
     "scripts": {
       "prechangelog": "git-authors-cli"
     }
-  }
+  },
+  "contributors": [
+    "Kiko Beats <josefrancisco.verdu@gmail.com>"
+  ]
 }

@@ -1,3 +1,85 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="0.7.2"></a>
+## 0.7.2 (2018-10-27)
+
+
+### Bug Fixes
+
+* **package:** update boxen to version 2.0.0 ([e14316e](https://github.com/kikobeats/svr/commit/e14316e))
+* **package:** update clean-stack to version 2.0.0 ([90e4bb1](https://github.com/kikobeats/svr/commit/90e4bb1))
+* **package:** update debounce to version 1.2.0 ([6c0100d](https://github.com/kikobeats/svr/commit/6c0100d))
+* **package:** update get-port to version 4.0.0 ([9f6dd8b](https://github.com/kikobeats/svr/commit/9f6dd8b))
+* **package:** update load-json-file to version 5.1.0 ([68a7025](https://github.com/kikobeats/svr/commit/68a7025))
+* **package:** update ora to version 3.0.0 ([f5aa972](https://github.com/kikobeats/svr/commit/f5aa972))
+* **package:** update time-stamp to version 2.1.0 ([e0e9782](https://github.com/kikobeats/svr/commit/e0e9782))
+* **package:** update time-stamp to version 2.2.0 ([e173aaa](https://github.com/kikobeats/svr/commit/e173aaa))
+
+
+
+<a name="0.7.1"></a>
+## 0.7.1 (2018-07-11)
+
+
+### Bug Fixes
+
+* **package:** update clear-module to version 3.0.0 ([b91d8e5](https://github.com/kikobeats/svr/commit/b91d8e5))
+* **package:** update load-json-file to version 5.0.0 ([7bab6c3](https://github.com/kikobeats/svr/commit/7bab6c3))
+
+
+
+<a name="0.7.0"></a>
+# 0.7.0 (2018-04-30)
+
+
+
+<a name="0.6.4"></a>
+## 0.6.4 (2018-04-26)
+
+
+### Bug Fixes
+
+* **package:** update meow to version 5.0.0 ([17cca3d](https://github.com/kikobeats/svr/commit/17cca3d))
+
+
+
+<a name="0.6.3"></a>
+## 0.6.3 (2018-04-24)
+
+
+### Bug Fixes
+
+* **log:** show correct filename when a file change ([db5f02b](https://github.com/kikobeats/svr/commit/db5f02b))
+
+
+
+<a name="0.6.2"></a>
+## 0.6.2 (2018-04-21)
+
+
+
+<a name="0.6.1"></a>
+## 0.6.1 (2018-04-18)
+
+
+### Bug Fixes
+
+* **package:** update chalk to version 2.4.0 ([7786306](https://github.com/kikobeats/svr/commit/7786306))
+* **package:** update log-symbols to version 2.2.0 ([3d2f402](https://github.com/kikobeats/svr/commit/3d2f402))
+* **package:** update ora to version 1.4.0 ([c453967](https://github.com/kikobeats/svr/commit/c453967))
+* **package:** update ora to version 2.0.0 ([eccc8a2](https://github.com/kikobeats/svr/commit/eccc8a2))
+* **package:** update update-notifier to version 2.4.0 ([c53b722](https://github.com/kikobeats/svr/commit/c53b722))
+* **package:** update update-notifier to version 2.5.0 ([3bf592b](https://github.com/kikobeats/svr/commit/3bf592b))
+
+
+
+<a name="0.6.0"></a>
+# 0.6.0 (2018-01-14)
+
+
+
 <a name="0.7.1"></a>
 ## 0.7.1 (2018-07-11)
 
@@ -179,6 +261,3 @@
 * Rename ([1373296](https://github.com/kikobeats/svr/commit/1373296))
 * Update README.md ([5f87ad1](https://github.com/kikobeats/svr/commit/5f87ad1))
 * Update README.md ([3806132](https://github.com/kikobeats/svr/commit/3806132))
-
-
-
