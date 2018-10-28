@@ -11,7 +11,7 @@ jobs:
       node_js:
         - lts/*
         - node
-      after_success: npm run coveralls
+      after_success: npm run coverage
     - stage: Release
       node_js: "lts/*"
       install: npm install --no-package-lock

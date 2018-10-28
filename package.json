@@ -11,6 +11,12 @@
     "name": "Kiko Beats",
     "url": "https://github.com/Kikobeats"
   },
+  "contributors": [
+    {
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kikobeats/svr.git"
@@ -93,7 +99,7 @@
   "scripts": {
     "build": "gulp build",
     "clean": "rm -rf node_modules",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "dev:docs": "concurrently \"gulp\" \"npm run dev:docs:server\"",
     "dev:docs:server": "browser-sync start --server --files \"index.html, README.md, static/**/*.(css|js)\"",
     "lint": "standard-markdown README.md && standard",
@@ -143,8 +149,5 @@
     "scripts": {
       "prechangelog": "git-authors-cli"
     }
-  },
-  "contributors": [
-    "Kiko Beats <josefrancisco.verdu@gmail.com>"
-  ]
+  }
 }
