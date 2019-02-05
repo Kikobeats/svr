@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.8"></a>
+## [0.7.8](https://github.com/kikobeats/svr/compare/v0.7.7...v0.7.8) (2019-02-05)
+
+
+### Bug Fixes
+
+* linter ([68bd635](https://github.com/kikobeats/svr/commit/68bd635))
+
+
+
 <a name="0.7.7"></a>
 ## [0.7.7](https://github.com/kikobeats/svr/compare/v0.7.6...v0.7.7) (2018-12-25)
 
