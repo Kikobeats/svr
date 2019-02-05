@@ -51,15 +51,7 @@ const doRestart = ({
   )
 }
 
-module.exports = ({
-  filepath,
-  watchFiles,
-  pwd,
-  pkg,
-  server,
-  sockets,
-  ...opts
-}) => {
+module.exports = ({ filepath, watchFiles, pwd, pkg, server, sockets, ...opts }) => {
   const watchConfig = getWatchConfig({
     pwd,
     pkg,
@@ -87,8 +79,7 @@ module.exports = ({
   watcher.once(
     'all',
     debounce(
-      (event, filename) =>
-        restart({ forcing: false, filename: path.relative(pwd, filename) }),
+      (event, filename) => restart({ forcing: false, filename: path.relative(pwd, filename) }),
       10
     )
   )

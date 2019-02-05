@@ -16,9 +16,7 @@ module.exports = ({ appName, port, inUse, userPort }) => {
   let message = chalk.green(`${appName} is running!`)
 
   if (inUse) {
-    message += chalk.red(
-      `\n(on port ${port}, because ${userPort} is already in use)`
-    )
+    message += chalk.red(`\n(on port ${port}, because ${userPort} is already in use)`)
   }
 
   message += '\n\n'

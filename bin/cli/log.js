@@ -67,9 +67,7 @@ module.exports = {
     let done = false
 
     const timer = setInterval(() => {
-      done
-        ? logUpdate(`${logMessage}`)
-        : logUpdate(`${logMessage} ${spinner.frame()}`)
+      done ? logUpdate(`${logMessage}`) : logUpdate(`${logMessage} ${spinner.frame()}`)
     }, 50)
 
     return {

@@ -11,19 +11,17 @@ module.exports = `
 
     -p, --port          Port to listen on ${chalk.gray('[default=3000]')}
 
-    -H, --host          The host on which svr will run ${chalk.gray(
-    "[default='localhost']"
-  )}
+    -H, --host          The host on which svr will run ${chalk.gray("[default='localhost']")}
 
     -d, --pwd           A directory to start ${chalk.gray('[default=cwd]')}
 
     -L, --poll          Poll for code changes rather than using events ${chalk.gray(
-    '[default=false]'
-  )}
+      '[default=false]'
+    )}
 
     -i,  --ignore       Ignore watching a file, directory, or glob ${chalk.gray(
-    '[default=.gitignore, pkg.ignore]'
-  )}
+      '[default=.gitignore, pkg.ignore]'
+    )}
 
     -w, --watch         Add more files than the project path to watch
 

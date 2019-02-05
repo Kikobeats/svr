@@ -12,7 +12,10 @@
     "url": "https://github.com/Kikobeats"
   },
   "contributors": [
-    "Kiko Beats <josefrancisco.verdu@gmail.com>"
+    {
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
+    }
   ],
   "repository": {
     "type": "git",
@@ -104,7 +107,6 @@
     "precommit": "lint-staged",
     "prelint": "npm run pretty",
     "prerelease": "npm run update:check && git-authors-cli",
-    "pretest": "npm run lint",
     "pretty": "prettier-standard {core,test,bin}/**/*.js",
     "release": "git add package.json && standard-version -a",
     "release:github": "conventional-github-releaser -p angular",

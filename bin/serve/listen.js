@@ -5,15 +5,7 @@ const importCwd = require('import-cwd')
 const { error: logError } = require('../cli/log')
 const listenMessage = require('./listen-message')
 
-module.exports = async ({
-  userPort,
-  inUse,
-  pkg,
-  port,
-  host,
-  restarting,
-  filepath
-}) => {
+module.exports = async ({ userPort, inUse, pkg, port, host, restarting, filepath }) => {
   let server
 
   try {
