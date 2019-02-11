@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.9"></a>
+## [0.7.9](https://github.com/kikobeats/svr/compare/v0.7.7...v0.7.9) (2019-02-11)
+
+
+### Bug Fixes
+
+* **package:** update chokidar to version 2.1.0 ([a3ee135](https://github.com/kikobeats/svr/commit/a3ee135))
+* linter ([68bd635](https://github.com/kikobeats/svr/commit/68bd635))
+* **package:** update ora to version 3.1.0 ([797196a](https://github.com/kikobeats/svr/commit/797196a))
+
+
+
 <a name="0.7.8"></a>
 ## [0.7.8](https://github.com/kikobeats/svr/compare/v0.7.7...v0.7.8) (2019-02-05)
 
