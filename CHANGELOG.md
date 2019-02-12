@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.10"></a>
+## [0.7.10](https://github.com/kikobeats/svr/compare/v0.7.9...v0.7.10) (2019-02-12)
+
+
+### Bug Fixes
+
+* **package:** update load-json-file to version 5.2.0 ([2fd978f](https://github.com/kikobeats/svr/commit/2fd978f))
+
+
+
 <a name="0.7.9"></a>
 ## [0.7.9](https://github.com/kikobeats/svr/compare/v0.7.7...v0.7.9) (2019-02-11)
 
