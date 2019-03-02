@@ -39,7 +39,7 @@
     "service"
   ],
   "dependencies": {
-    "boxen": "~2.1.0",
+    "boxen": "~3.0.0",
     "chalk": "~2.4.0",
     "chokidar": "~2.1.0",
     "clean-stack": "~2.0.0",
