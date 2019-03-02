@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.11"></a>
+## [0.7.11](https://github.com/kikobeats/svr/compare/v0.7.10...v0.7.11) (2019-03-02)
+
+
+### Bug Fixes
+
+* **package:** update boxen to version 3.0.0 ([5b87fb2](https://github.com/kikobeats/svr/commit/5b87fb2))
+
+
+
 <a name="0.7.10"></a>
 ## [0.7.10](https://github.com/kikobeats/svr/compare/v0.7.9...v0.7.10) (2019-02-12)
 
