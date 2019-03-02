@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.12"></a>
+## [0.7.12](https://github.com/kikobeats/svr/compare/v0.7.11...v0.7.12) (2019-03-02)
+
+
+### Bug Fixes
+
+* **package:** update get-port to version 4.2.0 ([27fc262](https://github.com/kikobeats/svr/commit/27fc262))
+* **package:** update ora to version 3.2.0 ([7529f8a](https://github.com/kikobeats/svr/commit/7529f8a))
+
+
+
 <a name="0.7.11"></a>
 ## [0.7.11](https://github.com/kikobeats/svr/compare/v0.7.10...v0.7.11) (2019-03-02)
 
