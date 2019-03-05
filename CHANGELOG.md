@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.14"></a>
+## [0.7.14](https://github.com/kikobeats/svr/compare/v0.7.13...v0.7.14) (2019-03-05)
+
+
+### Bug Fixes
+
+* **package:** update log-update to version 3.1.0 ([92f1180](https://github.com/kikobeats/svr/commit/92f1180))
+
+
+
 <a name="0.7.13"></a>
 ## [0.7.13](https://github.com/kikobeats/svr/compare/v0.7.12...v0.7.13) (2019-03-03)
 
