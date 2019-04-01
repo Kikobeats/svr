@@ -53,7 +53,7 @@
     "ip": "~1.1.5",
     "load-json-file": "~5.2.0",
     "log-symbols": "~2.2.0",
-    "log-update": "~3.1.0",
+    "log-update": "~3.2.0",
     "meow": "~5.0.0",
     "ora": "~3.2.0",
     "pretty-error": "~2.1.1",
