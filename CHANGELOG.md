@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.17"></a>
+## [0.7.17](https://github.com/kikobeats/svr/compare/v0.7.16...v0.7.17) (2019-04-03)
+
+
+### Bug Fixes
+
+* **package:** update ora to version 3.4.0 ([ec5578e](https://github.com/kikobeats/svr/commit/ec5578e))
+
+
+
 <a name="0.7.16"></a>
 ## [0.7.16](https://github.com/kikobeats/svr/compare/v0.7.15...v0.7.16) (2019-04-02)
 
