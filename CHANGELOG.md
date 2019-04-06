@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.19"></a>
+## [0.7.19](https://github.com/kikobeats/svr/compare/v0.7.18...v0.7.19) (2019-04-06)
+
+
+### Bug Fixes
+
+* **package:** update boxen to version 3.1.0 ([352478f](https://github.com/kikobeats/svr/commit/352478f))
+* **package:** update load-json-file to version 5.3.0 ([75be02b](https://github.com/kikobeats/svr/commit/75be02b))
+
+
+
 <a name="0.7.18"></a>
 ## [0.7.18](https://github.com/kikobeats/svr/compare/v0.7.17...v0.7.18) (2019-04-06)
 
