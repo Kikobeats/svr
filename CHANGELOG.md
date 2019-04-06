@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.18"></a>
+## [0.7.18](https://github.com/kikobeats/svr/compare/v0.7.17...v0.7.18) (2019-04-06)
+
+
+### Bug Fixes
+
+* **package:** update get-port to version 5.0.0 ([169c8ae](https://github.com/kikobeats/svr/commit/169c8ae))
+
+
+
 <a name="0.7.17"></a>
 ## [0.7.17](https://github.com/kikobeats/svr/compare/v0.7.16...v0.7.17) (2019-04-03)
 
