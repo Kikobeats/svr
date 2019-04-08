@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.21"></a>
+## [0.7.21](https://github.com/kikobeats/svr/compare/v0.7.20...v0.7.21) (2019-04-08)
+
+
+### Bug Fixes
+
+* **package:** update clear-module to version 3.2.0 ([98656f6](https://github.com/kikobeats/svr/commit/98656f6))
+
+
+
 <a name="0.7.20"></a>
 ## [0.7.20](https://github.com/kikobeats/svr/compare/v0.7.19...v0.7.20) (2019-04-07)
 
