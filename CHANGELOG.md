@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.22](https://github.com/kikobeats/svr/compare/v0.7.21...v0.7.22) (2019-04-17)
+
+
+### Bug Fixes
+
+* **package:** update indent-string to version 4.0.0 ([bc67e2c](https://github.com/kikobeats/svr/commit/bc67e2c))
+
+
+
 <a name="0.7.21"></a>
 ## [0.7.21](https://github.com/kikobeats/svr/compare/v0.7.20...v0.7.21) (2019-04-08)
 
