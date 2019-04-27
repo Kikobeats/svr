@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.24](https://github.com/kikobeats/svr/compare/v0.7.23...v0.7.24) (2019-04-27)
+
+
+### Bug Fixes
+
+* **package:** update import-cwd to version 3.0.0 ([e7bca0d](https://github.com/kikobeats/svr/commit/e7bca0d))
+* **package:** update load-json-file to version 6.0.0 ([2f3b2a6](https://github.com/kikobeats/svr/commit/2f3b2a6))
+
+
+
 ## [0.7.23](https://github.com/kikobeats/svr/compare/v0.7.22...v0.7.23) (2019-04-17)
 
 
