@@ -41,7 +41,7 @@
   "dependencies": {
     "boxen": "~3.1.0",
     "chalk": "~2.4.0",
-    "chokidar": "~2.1.0",
+    "chokidar": "~3.0.0",
     "clean-stack": "~2.1.0",
     "clear-module": "~3.2.0",
     "debounce": "~1.2.0",
