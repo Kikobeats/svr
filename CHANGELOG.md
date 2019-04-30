@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.25](https://github.com/kikobeats/svr/compare/v0.7.23...v0.7.25) (2019-04-30)
+
+
+### Bug Fixes
+
+* **package:** update boxen to version 3.2.0 ([251cb32](https://github.com/kikobeats/svr/commit/251cb32))
+* **package:** update chokidar to version 3.0.0 ([08e1bc5](https://github.com/kikobeats/svr/commit/08e1bc5))
+* **package:** update import-cwd to version 3.0.0 ([e7bca0d](https://github.com/kikobeats/svr/commit/e7bca0d))
+* **package:** update load-json-file to version 6.0.0 ([2f3b2a6](https://github.com/kikobeats/svr/commit/2f3b2a6))
+
+
+
 ## [0.7.24](https://github.com/kikobeats/svr/compare/v0.7.23...v0.7.24) (2019-04-27)
 
 
