@@ -1,6 +1,20 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.7.26](https://github.com/kikobeats/svr/compare/v0.7.25...v0.7.26) (2019-05-15)
+
+
+### Bug Fixes
+
+* **package:** update update-notifier to version 2.6.0 ([2079892](https://github.com/kikobeats/svr/commit/2079892))
+
+
+### Build System
+
+* update dependencies ([1d668c5](https://github.com/kikobeats/svr/commit/1d668c5))
+
+
 
 ## [0.7.25](https://github.com/kikobeats/svr/compare/v0.7.23...v0.7.25) (2019-04-30)
 
