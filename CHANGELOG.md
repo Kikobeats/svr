@@ -1,58 +1,9 @@
-# Changelog
+# Change Log
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [0.7.26](https://github.com/kikobeats/svr/compare/v0.7.25...v0.7.26) (2019-05-15)
-
-
-### Bug Fixes
-
-* **package:** update update-notifier to version 2.6.0 ([2079892](https://github.com/kikobeats/svr/commit/2079892))
-
-
-### Build System
-
-* update dependencies ([1d668c5](https://github.com/kikobeats/svr/commit/1d668c5))
-
-
-
-## [0.7.25](https://github.com/kikobeats/svr/compare/v0.7.23...v0.7.25) (2019-04-30)
-
-
-### Bug Fixes
-
-* **package:** update boxen to version 3.2.0 ([251cb32](https://github.com/kikobeats/svr/commit/251cb32))
-* **package:** update chokidar to version 3.0.0 ([08e1bc5](https://github.com/kikobeats/svr/commit/08e1bc5))
-* **package:** update import-cwd to version 3.0.0 ([e7bca0d](https://github.com/kikobeats/svr/commit/e7bca0d))
-* **package:** update load-json-file to version 6.0.0 ([2f3b2a6](https://github.com/kikobeats/svr/commit/2f3b2a6))
-
-
-
-## [0.7.24](https://github.com/kikobeats/svr/compare/v0.7.23...v0.7.24) (2019-04-27)
-
-
-### Bug Fixes
-
-* **package:** update import-cwd to version 3.0.0 ([e7bca0d](https://github.com/kikobeats/svr/commit/e7bca0d))
-* **package:** update load-json-file to version 6.0.0 ([2f3b2a6](https://github.com/kikobeats/svr/commit/2f3b2a6))
-
-
-
-## [0.7.23](https://github.com/kikobeats/svr/compare/v0.7.22...v0.7.23) (2019-04-17)
-
-
-### Bug Fixes
-
-* **package:** update log-symbols to version 3.0.0 ([6d6cc8c](https://github.com/kikobeats/svr/commit/6d6cc8c))
-
-
-
-## [0.7.22](https://github.com/kikobeats/svr/compare/v0.7.21...v0.7.22) (2019-04-17)
-
-
-### Bug Fixes
-
-* **package:** update indent-string to version 4.0.0 ([bc67e2c](https://github.com/kikobeats/svr/commit/bc67e2c))
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/kikobeats/svr/compare/v0.7.26...v1.0.0) (2019-05-15)
 
 
 
