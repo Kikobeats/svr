@@ -12,7 +12,10 @@
     "url": "https://github.com/Kikobeats"
   },
   "contributors": [
-    "Kiko Beats <josefrancisco.verdu@gmail.com>"
+    {
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
+    }
   ],
   "repository": {
     "type": "git",
@@ -58,7 +61,7 @@
     "ora": "~3.4.0",
     "pretty-error": "~2.1.1",
     "time-stamp": "~2.2.0",
-    "update-notifier": "~2.6.0"
+    "update-notifier": "~3.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
