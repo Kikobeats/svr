@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/kikobeats/svr/compare/v1.0.2...v1.0.3) (2019-06-03)
+
+
+### Build System
+
+* setup better docs url ([cdfd3e4](https://github.com/kikobeats/svr/commit/cdfd3e4))
+
+
+
 ### [1.0.2](https://github.com/kikobeats/svr/compare/v1.0.1...v1.0.2) (2019-05-29)
 
 
