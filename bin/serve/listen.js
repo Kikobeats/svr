@@ -17,7 +17,7 @@ module.exports = async ({ userPort, inUse, pkg, port, host, restarting, filepath
     server = app.listen(port, host, () => {
       if (!restarting) {
         const message = listenMessage({
-          appName: pkg.name,
+          appName: pkg.name || 'svr',
           userPort,
           port,
           inUse

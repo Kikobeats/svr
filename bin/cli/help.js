@@ -5,29 +5,25 @@ const chalk = require('chalk')
 module.exports = `
   ${chalk.bold('Usage')}
 
-    $ svr [path][options]
+    $ svr ${chalk.gray('[path][options]')}
 
   ${chalk.bold('Options')}
 
-    -p, --port          Port to listen on ${chalk.gray('[default=3000]')}
-
-    -H, --host          The host on which svr will run ${chalk.gray("[default='localhost']")}
-
-    -d, --pwd           A directory to start ${chalk.gray('[default=cwd]')}
-
-    -L, --poll          Poll for code changes rather than using events ${chalk.gray(
-      '[default=false]'
+    --depth         If set, limits how many levels of subdirectories will be traversed. ${chalk.gray(
+      '[default=undefined]'
     )}
-
-    -i,  --ignore       Ignore watching a file, directory, or glob ${chalk.gray(
+    --help          Show this usage information
+    --host          The host on which svr will run ${chalk.gray("[default='localhost']")}
+    --ignore        Ignore watching a file, directory, or glob ${chalk.gray(
       '[default=.gitignore, pkg.ignore]'
     )}
-
-    -w, --watch         Add more files than the project path to watch
-
-    -v, --version       Output the version number
-
-    -h, --help          Show this usage information
+    --poll          Poll for code changes rather than using events ${chalk.gray('[default=false]')}
+    --port          Port to listen on ${chalk.gray('[default=3000]')}
+    --pwd           A directory to start ${chalk.gray('[default=process.cwd()]')}
+    --version       Output the version number
+    --watch         Add more files than the project path to watch ${chalk.gray(
+      '[default=process.cwd()]'
+    )}
 
   ${chalk.bold('Examples')}
 

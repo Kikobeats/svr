@@ -9,7 +9,7 @@ module.exports = ({
   filepath,
   filename,
   pkg,
-  pwd,
+  cwd,
   cli,
   watchFiles,
   port,
@@ -36,7 +36,7 @@ module.exports = ({
 
   toDelete = toDelete
     .filter(filename => !matchers(path.basename(filename)))
-    .map(filename => path.resolve(pwd, filename))
+    .map(filename => path.resolve(cwd, filename))
 
   // Remove file that changed from the `require` cache
   for (const item of toDelete) {
@@ -56,7 +56,7 @@ module.exports = ({
     port,
     filepath,
     pkg,
-    pwd,
+    cwd,
     cli,
     restarting: true,
     watchFiles

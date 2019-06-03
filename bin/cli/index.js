@@ -16,46 +16,44 @@ const cli = require('meow')(require('./help'), {
   flags: {
     port: {
       type: 'number',
-      alias: 'p',
       default: process.env.port || process.env.PORT || 3000
     },
     poll: {
       type: 'boolean',
-      alias: 'L',
       default: false
     },
     ignore: {
-      alias: 'i',
       type: 'array',
       default: []
     },
     host: {
-      alias: 'H',
       default: '::'
     },
     watch: {
-      alias: 'w',
       type: 'array',
       default: []
     },
-    pwd: {
+    depth: {
+      type: 'number',
+      default: undefined
+    },
+    cwd: {
       default: process.cwd()
     }
   }
 })
 ;(async () => {
   const { input } = cli
-  const { pwd, port, watch: watchFiles, ...opts } = cli.flags
-  const { filename, pkg } = getMainFile({ input, pwd })
-
-  const filepath = path.resolve(pwd, filename)
+  const { cwd, port, watch: watchFiles, ...opts } = cli.flags
+  const { filename, pkg } = getMainFile({ input, cwd })
+  const filepath = path.resolve(cwd, filename)
 
   require('../serve')({
     filepath,
     pkg,
-    pwd,
+    cwd,
     port,
-    watchFiles,
+    watchFiles: Array.isArray(watchFiles) ? watchFiles : [watchFiles],
     ...opts
   })
 })()

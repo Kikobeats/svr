@@ -4,11 +4,11 @@ const ignoredDirectories = require('ignore-by-default').directories()
 const getIgnoredFromGit = require('ignored')
 const path = require('path')
 
-const getIgnoredFiles = ({ ignore = [], pkg, pwd }) => {
+const getIgnoredFiles = ({ ignore = [], pkg, cwd }) => {
   const set = new Set()
   const addIgnore = value => set.add(value)
 
-  const gitignore = path.resolve(pwd, '.gitignore')
+  const gitignore = path.resolve(cwd, '.gitignore')
   getIgnoredFromGit(gitignore).forEach(addIgnore)
   ;[].concat(ignore).forEach(addIgnore)
   if (pkg.ignore) pkg.ignore.forEach(addIgnore)
@@ -18,19 +18,21 @@ const getIgnoredFiles = ({ ignore = [], pkg, pwd }) => {
   const rawIgnored = Array.from(set)
 
   return rawIgnored.reduce((acc, ignore) => {
-    const file = path.resolve(pwd, ignore)
+    const file = path.resolve(cwd, ignore)
     acc.push(file)
     return acc
   }, [])
 }
 
-module.exports = ({ poll: usePolling, ...opts }) => {
-  const ignored = getIgnoredFiles(opts)
+module.exports = ({ cwd, depth, poll: usePolling, ...opts }) => {
+  const ignored = getIgnoredFiles({ cwd, ...opts })
 
   const watchConfig = {
-    usePolling,
     ignoreInitial: true,
-    ignored
+    usePolling,
+    ignored,
+    depth,
+    cwd
   }
 
   return watchConfig

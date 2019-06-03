@@ -26,7 +26,7 @@ const doRestart = ({
   filename,
   filepath,
   pkg,
-  pwd,
+  cwd,
   forcing,
   cli,
   watchFiles,
@@ -43,7 +43,7 @@ const doRestart = ({
       filepath,
       filename,
       pkg,
-      pwd,
+      cwd,
       cli,
       watcher,
       port
@@ -51,14 +51,14 @@ const doRestart = ({
   )
 }
 
-module.exports = ({ filepath, watchFiles, pwd, pkg, server, sockets, ...opts }) => {
+module.exports = ({ filepath, watchFiles, cwd, pkg, server, sockets, ...opts }) => {
   const watchConfig = getWatchConfig({
-    pwd,
+    cwd,
     pkg,
     ...opts
   })
 
-  const toWatch = [].concat(watchFiles, pwd)
+  const toWatch = [].concat(watchFiles, cwd)
   const watcher = watch(toWatch, watchConfig)
 
   const restart = ({ forcing, filename }) =>
@@ -69,7 +69,7 @@ module.exports = ({ filepath, watchFiles, pwd, pkg, server, sockets, ...opts }) 
       server,
       filename,
       filepath,
-      pwd,
+      cwd,
       pkg,
       forcing,
       watcher,
@@ -79,7 +79,7 @@ module.exports = ({ filepath, watchFiles, pwd, pkg, server, sockets, ...opts }) 
   watcher.once(
     'all',
     debounce(
-      (event, filename) => restart({ forcing: false, filename: path.relative(pwd, filename) }),
+      (event, filename) => restart({ forcing: false, filename: path.relative(cwd, filename) }),
       10
     )
   )
