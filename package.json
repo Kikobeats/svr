@@ -1,7 +1,7 @@
 {
   "name": "svr",
   "description": "HTTP development server done right",
-  "homepage": "https://documentup.com/Kikobeats/svr",
+  "homepage": "https://nicedoc.io/Kikobeats/svr",
   "version": "1.0.2",
   "main": "bin/serve/index.js",
   "bin": {
