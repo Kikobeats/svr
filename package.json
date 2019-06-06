@@ -42,6 +42,7 @@
     "service"
   ],
   "dependencies": {
+    "anymatch": "~3.0.2",
     "boxen": "~4.0.0",
     "chalk": "~2.4.0",
     "chokidar": "~3.0.0",
@@ -59,7 +60,6 @@
     "log-update": "~3.2.0",
     "meow": "~5.0.0",
     "ora": "~3.4.0",
-    "picomatch": "~2.0.7",
     "pretty-error": "~2.1.1",
     "time-stamp": "~2.2.0",
     "update-notifier": "~3.0.0"

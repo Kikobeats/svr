@@ -1,7 +1,7 @@
 'use strict'
 
 const clearModule = require('clear-module')
-const picomatch = require('picomatch')
+const anymatch = require('anymatch')
 const path = require('path')
 
 module.exports = ({
@@ -32,7 +32,7 @@ module.exports = ({
     }
   }
 
-  const matchers = picomatch(ignored)
+  const matchers = anymatch(ignored)
 
   toDelete = toDelete
     .filter(filename => !matchers(path.basename(filename)))
