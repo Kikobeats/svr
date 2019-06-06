@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/kikobeats/svr/compare/v1.1.0...v1.1.1) (2019-06-06)
+
+
+### Bug Fixes
+
+* typo ([f95d192](https://github.com/kikobeats/svr/commit/f95d192))
+
+
+### Build System
+
+* use anymatch ([7a346da](https://github.com/kikobeats/svr/commit/7a346da))
+* use picomatch instead of anymatch ([38f6f40](https://github.com/kikobeats/svr/commit/38f6f40))
+
+
+
 ## [1.1.0](https://github.com/kikobeats/svr/compare/v1.0.3...v1.1.0) (2019-06-03)
 
 
