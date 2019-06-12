@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/kikobeats/svr/compare/v1.1.0...v1.1.2) (2019-06-12)
+
+
+### Bug Fixes
+
+* typo ([f95d192](https://github.com/kikobeats/svr/commit/f95d192))
+* **package:** update boxen to version 4.1.0 ([039187e](https://github.com/kikobeats/svr/commit/039187e))
+* **package:** update load-json-file to version 6.1.0 ([b4efb18](https://github.com/kikobeats/svr/commit/b4efb18))
+
+
+### Build System
+
+* use anymatch ([7a346da](https://github.com/kikobeats/svr/commit/7a346da))
+* use picomatch instead of anymatch ([38f6f40](https://github.com/kikobeats/svr/commit/38f6f40))
+
+
+
 ### [1.1.1](https://github.com/kikobeats/svr/compare/v1.1.0...v1.1.1) (2019-06-06)
 
 
