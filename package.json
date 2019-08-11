@@ -12,7 +12,10 @@
     "url": "https://github.com/Kikobeats"
   },
   "contributors": [
-    "Kiko Beats <josefrancisco.verdu@gmail.com>"
+    {
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
+    }
   ],
   "repository": {
     "type": "git",
@@ -46,10 +49,10 @@
     "clean-stack": "~2.1.0",
     "clear-module": "~3.2.0",
     "debounce": "~1.2.0",
+    "express": "~4.17.1",
     "get-port": "~5.0.0",
     "ignore-by-default": "~1.0.1",
     "ignored": "~2.0.4",
-    "import-cwd": "~3.0.0",
     "indent-string": "~4.0.0",
     "ip": "~1.1.5",
     "load-json-file": "~6.1.0",
@@ -102,7 +105,6 @@
     "dev:docs:server": "browser-sync start --server --files \"index.html, README.md, static/**/*.(css|js)\"",
     "lint": "standard-markdown README.md && standard",
     "postrelease": "npm run release:tags && npm run release:github && ci-publish",
-    "precommit": "lint-staged",
     "prerelease": "npm run update:check",
     "pretty": "prettier-standard {core,test,bin}/**/*.js",
     "release": "git-authors-cli && git add package.json && standard-version -a",
@@ -125,16 +127,14 @@
     }
   },
   "lint-staged": {
-    "linters": {
-      "package.json": [
-        "finepack",
-        "git add"
-      ],
-      "*.js": [
-        "prettier-standard",
-        "git add"
-      ]
-    }
+    "package.json": [
+      "finepack",
+      "git add"
+    ],
+    "*.js": [
+      "prettier-standard",
+      "git add"
+    ]
   },
   "standard": {
     "env": [
