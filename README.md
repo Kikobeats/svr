@@ -23,7 +23,7 @@
 
 The idea behind this project is **smart reload**, avoiding reload completely the process. It just reload the code that changes!
 
-It's similar [micro-dev](https://github.com/zeit/micro-dev), but out of the box for any framework that use [http.Server.listen()](https://nodejs.org/api/http.html#http_server_listen_port_hostname_backlog_callback) interface.
+It's similar [`micro-dev`](https://github.com/zeit/micro-dev), but out of the box for any exposed function that use `http.IncomingMessage` and `http.ServerResponse` objects.
 
 ## Installation
 
