@@ -179,7 +179,7 @@ You can declare it as `npm start` script
 ```
 {
   "scripts": {
-	  "dev": "svr",
+    "dev": "svr",
     "start": "bin/server"
   }
 }
