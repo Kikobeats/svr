@@ -13,17 +13,18 @@
 [![Dev Dependencies Status](https://img.shields.io/david/dev/Kikobeats/svr.svg?style=flat-square)](https://david-dm.org/Kikobeats/svr#info=devDependencies)
 [![NPM Status](https://img.shields.io/npm/dm/svr.svg?style=flat-square)](https://www.npmjs.org/package/svr)
 
-> HTTP development server done right
+> HTTP development server done right.
 
 ## Features
 
-- **Hot Reloading**: Automagically reload modified files, not the process.
-- **Pretty Errors**: They will be beautifully rendered.
-- **Port Selection**: Automatic detection and use of an open port (if the specified one is in use).
+- **Smart reload**, just reloading modified fileds to do development fast.
+- **Reload on demand**, after type `rs` on your terminal.
+- **Pretty Errors**, making unexpected errors easy to read.
+- **Port Selection**, supporting detection for already in use ports.
+- **Clipboard Support**, copying the local address in your clipboard.
+- **Debug in Your Network**, exposing the process in your local host.
 
-The idea behind this project is **smart reload**, avoiding reload completely the process. It just reload the code that changes!
-
-It's similar [`micro-dev`](https://github.com/zeit/micro-dev), but compatible with any function that exposes `req, res` interface (micro, express, koa, hapi, fastify, etc)
+It's similar [`micro-dev`](https://github.com/zeit/micro-dev), but compatible with any function that exposes `req, res` interface (micro, express, koa, hapi, fastify, etc).
 
 ## Installation
 
