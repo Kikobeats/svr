@@ -17,12 +17,12 @@
 
 ## Features
 
-- **Smart reload**, just reloading modified fileds to do development fast.
+- **Smart reload**, just reloading modified files to do development fast.
 - **Reload on demand**, after type `rs` on your terminal.
 - **Pretty Errors**, making unexpected errors easy to read.
 - **Port Selection**, supporting detection for already in use ports.
 - **Clipboard Support**, copying the local address in your clipboard.
-- **Debug in Your Network**, exposing the process in your local host.
+- **Debug in Your Network**, exposing the process in your local network.
 
 It's similar [`micro-dev`](https://github.com/zeit/micro-dev), but compatible with any function that exposes `req, res` interface (micro, express, koa, hapi, fastify, etc).
 
@@ -63,9 +63,7 @@ After that, just call **svr**:
 $ svr
 ```
 
-**svr** is assuming you have a `main` file declared in your `package.json` in the project directory.
-
-Also, you can provide it as first argument:
+**svr** is assuming you have a `main` file declared in your `package.json` in the project directory. Also, you can provide it as first argument:
 
 ```bash
 $ svr index.js
@@ -98,9 +96,9 @@ $ npm start
 
 You can type `svr --help` to see all the options.
 
-### Hot reloading
+### Smart Reload
 
- whatever file modification in the project directory will be listened by **svr** automagically:
+When a file is modified in the project directory, **svr** will reload just the modified file:
 
 ```bash
   ┌───────────────────────────────────────────────────┐
@@ -115,11 +113,9 @@ You can type `svr --help` to see all the options.
    ℹ 18:32:42 modified index.js
 ```
 
-**svr** takes into consideration ignore non relevant files.
+Also, **svr** takes into consideration files that can be ignored:
 
-By default, it will be to ignore:
-
-- well known files to ignore, like `node_modules`, `.git`, etc.
+- Well known files to ignore, like `node_modules`, `.git`, etc.
 - `.gitignore` declarations.
 - `ignored` field in your `package.json`.
 
@@ -134,9 +130,9 @@ Also, you can use `-w` or `--watch` to add more file path to be listened. You ca
 - Relative or absolute paths.
 - Glob patterns.
 
-## Manual reloading
+## Reload on demand
 
-If you need to reload the server on demand, just type `rs`:
+In any moment you can refresh the process typing `rs` in the terminal window where **svr** is running:
 
 ```bash
   ┌───────────────────────────────────────────────────┐
@@ -153,13 +149,11 @@ If you need to reload the server on demand, just type `rs`:
    ℹ 18:34:07 restart index.js
 ```
 
-### Production Server
+### Don't use on production
 
-**svr** is oriented just for development scenarios.
+**svr** is oriented **just for development** scenarios, **not** for production.
 
-Under production, simply create the server you need based on your necessities.
-
-For example, let's create a `bin/server` as production server:
+Under production, simply create the server you need based on your necessities, for example, let's create a `bin/server` as production server:
 
 ```
 #!/usr/bin/env node
@@ -180,11 +174,12 @@ app.listen(port, function () {
 })
 ```
 
-Just add it as `npm start` script
+You can declare it as `npm start` script
 
 ```
 {
   "scripts": {
+	  "dev": "svr",
     "start": "bin/server"
   }
 }
