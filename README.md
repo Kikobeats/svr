@@ -155,7 +155,7 @@ In any moment you can refresh the process typing `rs` in the terminal window whe
 
 Under production, simply create the server you need based on your necessities, for example, let's create a `bin/server` as production server:
 
-```
+```js
 #!/usr/bin/env node
 
 'use strict'
@@ -176,7 +176,7 @@ app.listen(port, function () {
 
 You can declare it as `npm start` script:
 
-```
+```json
 {
   "scripts": {
     "dev": "svr",
