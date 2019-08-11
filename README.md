@@ -174,7 +174,7 @@ app.listen(port, function () {
 })
 ```
 
-You can declare it as `npm start` script
+You can declare it as `npm start` script:
 
 ```
 {
