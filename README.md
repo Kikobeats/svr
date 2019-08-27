@@ -74,7 +74,7 @@ We recommend setup **svr** as npm script:
 ```json
 {
   "scripts": {
-    "dev": "srv"
+    "dev": "svr"
   }
 }
 ```
