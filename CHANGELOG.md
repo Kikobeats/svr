@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/kikobeats/svr/compare/v2.0.0...v2.0.2) (2019-08-27)
+
 ### [2.0.1](https://github.com/kikobeats/svr/compare/v2.0.0...v2.0.1) (2019-08-11)
 
 ## [2.0.0](https://github.com/kikobeats/svr/compare/v1.1.3...v2.0.0) (2019-08-11)
