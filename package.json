@@ -12,8 +12,14 @@
     "url": "https://github.com/Kikobeats"
   },
   "contributors": [
-    "Kiko Beats <josefrancisco.verdu@gmail.com>",
-    "Roman Gräf <roman.graef@gmail.com>"
+    {
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
+    },
+    {
+      "name": "Roman Gräf",
+      "email": "roman.graef@gmail.com"
+    }
   ],
   "repository": {
     "type": "git",
@@ -40,10 +46,10 @@
     "service"
   ],
   "dependencies": {
-    "anymatch": "~3.0.3",
+    "anymatch": "~3.1.0",
     "boxen": "~4.1.0",
     "chalk": "~2.4.2",
-    "chokidar": "~3.0.2",
+    "chokidar": "~3.1.1",
     "clean-stack": "~2.2.0",
     "clear-module": "~4.0.0",
     "debounce": "~1.2.0",
@@ -55,9 +61,9 @@
     "ip": "~1.1.5",
     "load-json-file": "~6.2.0",
     "log-symbols": "~3.0.0",
-    "log-update": "~3.2.0",
+    "log-update": "~3.3.0",
     "meow": "~5.0.0",
-    "ora": "~3.4.0",
+    "ora": "~4.0.1",
     "pretty-error": "~2.1.1",
     "time-stamp": "~2.2.0",
     "update-notifier": "~3.0.1"
