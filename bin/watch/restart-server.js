@@ -29,15 +29,9 @@ module.exports = ({ spinner, filepath, pkg, cwd, cli, watchFiles, port, watcher,
 
   // Remove file that changed from the `require` cache
   for (const item of toDelete) {
-    let location
-
-    try {
-      location = require.resolve(item)
-    } catch (err) {
-      continue
-    }
-
-    clearModule(location)
+    // discard items not required before
+    if (!require.cache[item]) continue
+    clearModule(item)
   }
 
   // Restart the server
