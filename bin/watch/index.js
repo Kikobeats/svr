@@ -41,7 +41,6 @@ const doRestart = ({
       spinner,
       ignored,
       filepath,
-      filename,
       pkg,
       cwd,
       cli,

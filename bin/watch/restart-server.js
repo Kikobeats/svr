@@ -4,18 +4,7 @@ const clearModule = require('clear-module')
 const anymatch = require('anymatch')
 const path = require('path')
 
-module.exports = ({
-  spinner,
-  filepath,
-  filename,
-  pkg,
-  cwd,
-  cli,
-  watchFiles,
-  port,
-  watcher,
-  ignored
-}) => {
+module.exports = ({ spinner, filepath, pkg, cwd, cli, watchFiles, port, watcher, ignored }) => {
   const watched = watcher.getWatched()
   let toDelete = []
 

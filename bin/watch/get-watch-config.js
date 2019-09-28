@@ -15,13 +15,7 @@ const getIgnoredFiles = ({ ignore = [], pkg, cwd }) => {
 
   ignoredDirectories.forEach(addIgnore)
 
-  const rawIgnored = Array.from(set)
-
-  return rawIgnored.reduce((acc, ignore) => {
-    const file = path.resolve(cwd, ignore)
-    acc.push(file)
-    return acc
-  }, [])
+  return Array.from(set)
 }
 
 module.exports = ({ cwd, depth, poll: usePolling, ...opts }) => {
