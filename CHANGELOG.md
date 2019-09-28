@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.4](https://github.com/kikobeats/svr/compare/v2.0.3...v2.0.4) (2019-09-28)
+
+
+### Bug Fixes
+
+* avoid reload ignored files ([9d1d4ba](https://github.com/kikobeats/svr/commit/9d1d4ba))
+* don't reload not required modules ([fb85dc0](https://github.com/kikobeats/svr/commit/fb85dc0))
+* identation ([9ace124](https://github.com/kikobeats/svr/commit/9ace124))
+
 ### [2.0.3](https://github.com/kikobeats/svr/compare/v2.0.2...v2.0.3) (2019-09-27)
 
 ### [2.0.2](https://github.com/kikobeats/svr/compare/v2.0.0...v2.0.2) (2019-08-27)
