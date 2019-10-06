@@ -12,7 +12,7 @@ module.exports = async ({
   restarting = false,
   ...opts
 }) => {
-  if (restarting) process.emit('SIGNUSR2')
+  if (restarting) process.emit('SIGUSR2')
   const { userPort, port, inUse } = await getPort(originalPort)
   const server = await listen({
     userPort,
