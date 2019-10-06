@@ -5,6 +5,8 @@ const PrettyError = require('pretty-error')
 const getTimestamp = require('time-stamp')
 const logSymbols = require('log-symbols')
 const cleanStack = require('clean-stack')
+const timeSpan = require('time-span')
+const prettyMs = require('pretty-ms')
 
 const logUpdate = require('log-update')
 const chalk = require('chalk')
@@ -57,9 +59,10 @@ module.exports = {
     console.log(indentString(`${symbol}${prettyErr}`, OFFSET.length))
   },
   restart ({ filename, forcing }) {
+    const end = timeSpan()
     const symbol = chalk.blue(logSymbols.info)
     const timestamp = chalk.gray(getCurrentTimestamp())
-    const header = chalk.blue(forcing ? 'restart' : 'modified')
+    const header = chalk.blue(forcing ? 'restart' : 'reload')
     const message = chalk.gray(filename || '')
     const spinner = createSpinner()
     const logMessage = `${OFFSET} ${symbol} ${timestamp} ${header} ${message}`
@@ -67,7 +70,9 @@ module.exports = {
     let done = false
 
     const timer = setInterval(() => {
-      done ? logUpdate(`${logMessage}`) : logUpdate(`${logMessage} ${spinner.frame()}`)
+      done
+        ? logUpdate(`${logMessage} ${chalk.grey(`in ${prettyMs(end())}`)}`)
+        : logUpdate(`${logMessage} ${spinner.frame()}`)
     }, 50)
 
     return {

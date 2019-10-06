@@ -12,8 +12,14 @@
     "url": "https://github.com/Kikobeats"
   },
   "contributors": [
-    "Kiko Beats <josefrancisco.verdu@gmail.com>",
-    "Roman Gräf <roman.graef@gmail.com>"
+    {
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
+    },
+    {
+      "name": "Roman Gräf",
+      "email": "roman.graef@gmail.com"
+    }
   ],
   "repository": {
     "type": "git",
@@ -59,6 +65,8 @@
     "meow": "~5.0.0",
     "ora": "~4.0.1",
     "pretty-error": "~2.1.1",
+    "pretty-ms": "~5.0.0",
+    "time-span": "~3.1.0",
     "time-stamp": "~2.2.0",
     "update-notifier": "~3.0.1"
   },
