@@ -3,6 +3,7 @@
 'use strict'
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+process.setMaxListeners(Infinity)
 
 if (process.env.NODE_ENV === 'production') {
   throw Error('`svr` is only oriented for development scenarios.')
