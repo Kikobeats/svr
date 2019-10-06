@@ -63,7 +63,6 @@ module.exports = ({ filepath, watchFiles, cwd, pkg, server, sockets, ...opts }) 
   const restart = ({ forcing, filename }) =>
     doRestart({
       watchFiles,
-      ignored: watchConfig.ignored,
       sockets,
       server,
       filename,
@@ -71,7 +70,6 @@ module.exports = ({ filepath, watchFiles, cwd, pkg, server, sockets, ...opts }) 
       cwd,
       pkg,
       forcing,
-      watcher,
       ...opts
     })
 
