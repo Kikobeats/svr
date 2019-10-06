@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/kikobeats/svr/compare/v2.0.4...v2.1.0) (2019-10-06)
+
+
+### Bug Fixes
+
+* signal ([855d657](https://github.com/kikobeats/svr/commit/855d657))
+
+
+### Features
+
+* add reload time ([59ee59b](https://github.com/kikobeats/svr/commit/59ee59b))
+* reload under node_modules changes ([a223754](https://github.com/kikobeats/svr/commit/a223754))
+
 ### [2.0.4](https://github.com/kikobeats/svr/compare/v2.0.3...v2.0.4) (2019-09-28)
 
 
