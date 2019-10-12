@@ -12,8 +12,14 @@
     "url": "https://github.com/Kikobeats"
   },
   "contributors": [
-    "Kiko Beats <josefrancisco.verdu@gmail.com>",
-    "Roman Gräf <roman.graef@gmail.com>"
+    {
+      "name": "Kiko Beats",
+      "email": "josefrancisco.verdu@gmail.com"
+    },
+    {
+      "name": "Roman Gräf",
+      "email": "roman.graef@gmail.com"
+    }
   ],
   "repository": {
     "type": "git",
@@ -25,7 +31,6 @@
   "keywords": [
     "API",
     "development",
-    "express",
     "hot",
     "hrm",
     "http",
@@ -46,7 +51,6 @@
     "clean-stack": "~2.2.0",
     "clear-module": "~4.0.0",
     "debounce": "~1.2.0",
-    "express": "~4.17.1",
     "get-port": "~5.0.0",
     "ignore-by-default": "~1.0.1",
     "ignored": "~2.0.4",

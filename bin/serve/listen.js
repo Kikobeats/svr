@@ -1,20 +1,13 @@
 'use strict'
 
-const express = require('express')
-
 const { error: logError } = require('../cli/log')
 const listenMessage = require('./listen-message')
-
-const createServer = filepath =>
-  express()
-    .use(require(filepath))
-    .disable('x-powered-by')
 
 module.exports = async ({ userPort, inUse, pkg, port, host, restarting, filepath }) => {
   let server
 
   try {
-    server = createServer(filepath).listen(port, host, () => {
+    server = require(filepath).listen(port, host, () => {
       if (!restarting) {
         const message = listenMessage({
           appName: pkg.name || 'svr',
