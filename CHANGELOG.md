@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/kikobeats/svr/compare/v2.1.0...v2.2.0) (2019-10-12)
+
+
+### Features
+
+* remove express dependency ([976201d](https://github.com/kikobeats/svr/commit/976201d))
+
 ## [2.1.0](https://github.com/kikobeats/svr/compare/v2.0.4...v2.1.0) (2019-10-06)
 
 
