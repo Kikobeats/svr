@@ -42,6 +42,10 @@ const cli = require('meow')(require('./help'), {
       type: 'number',
       default: undefined
     },
+    restartSignal: {
+      type: 'string',
+      default: undefined
+    },
     cwd: {
       default: process.cwd()
     }

@@ -2,18 +2,10 @@
 
 const clearModule = require('clear-module')
 
-module.exports = ({ spinner, filepath, pkg, cwd, cli, watchFiles, port }) => {
+module.exports = ({ spinner, ...opts }) => {
   clearModule.all()
 
   // Restart the server
-  require('../serve')({
-    port,
-    filepath,
-    pkg,
-    cwd,
-    cli,
-    restarting: true,
-    watchFiles
-  })
+  require('../serve')({ ...opts, restarting: true })
   spinner.stop()
 }

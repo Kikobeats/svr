@@ -10,9 +10,13 @@ module.exports = async ({
   host,
   watchFiles,
   restarting = false,
+  restartSignal,
   ...opts
 }) => {
-  if (restarting) process.emit('SIGUSR2')
+  if (restarting && restartSignal) {
+    ;[].concat(restartSignal).forEach(signal => process.emit(signal))
+  }
+
   const { userPort, port, inUse } = await getPort(originalPort)
   const server = await listen({
     userPort,
@@ -31,12 +35,13 @@ module.exports = async ({
   })
 
   require('../watch')({
-    watchFiles,
     filepath,
     pkg,
+    port,
+    restartSignal,
     server,
     sockets,
-    port,
+    watchFiles,
     ...opts
   })
 }

@@ -19,42 +19,26 @@ const isRestartSignal = str =>
 
 let firsTime = false
 
-const doRestart = ({
-  ignored,
-  sockets,
-  server,
-  filename,
-  filepath,
-  pkg,
-  cwd,
-  forcing,
-  cli,
-  watchFiles,
-  watcher,
-  port
-}) => {
+const doRestart = ({ sockets, server, filename, forcing, ...opts }) => {
   const spinner = logRestart({ filename, forcing })
   destroySockets(sockets)
   server.close(
     restartServer.bind(this, {
-      watchFiles,
-      spinner,
-      ignored,
-      filepath,
-      pkg,
-      cwd,
-      cli,
-      watcher,
-      port
+      ...opts,
+      sockets,
+      server,
+      filename,
+      forcing,
+      spinner
     })
   )
 }
 
-module.exports = ({ filepath, watchFiles, cwd, pkg, server, sockets, ...opts }) => {
+module.exports = ({ cwd, pkg, watchFiles, ...opts }) => {
   const watchConfig = getWatchConfig({
+    ...opts,
     cwd,
-    pkg,
-    ...opts
+    pkg
   })
 
   const toWatch = [].concat(watchFiles, cwd)
@@ -62,15 +46,12 @@ module.exports = ({ filepath, watchFiles, cwd, pkg, server, sockets, ...opts }) 
 
   const restart = ({ forcing, filename }) =>
     doRestart({
+      ...opts,
       watchFiles,
-      sockets,
-      server,
       filename,
-      filepath,
       cwd,
       pkg,
-      forcing,
-      ...opts
+      forcing
     })
 
   watcher.once(
