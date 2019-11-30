@@ -65,7 +65,7 @@ module.exports = {
     const header = chalk.blue(forcing ? 'restart' : 'reload')
     const message = chalk.gray(filename || '')
     const spinner = createSpinner()
-    const logMessage = `${OFFSET} ${symbol} ${timestamp} ${header} ${message}`
+    const logMessage = `${OFFSET} ${symbol} ${timestamp} ${header} ${message}`.trim()
 
     let done = false
 
