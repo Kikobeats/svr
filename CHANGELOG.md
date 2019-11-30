@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/kikobeats/svr/compare/v2.2.0...v2.2.1) (2019-11-30)
+
+
+### Bug Fixes
+
+* remove extra whitespace ([f3e54e0](https://github.com/kikobeats/svr/commit/f3e54e0838041f5e04dc20c3a22ef4131fb7f3dd))
+
 ## [2.2.0](https://github.com/kikobeats/svr/compare/v2.1.0...v2.2.0) (2019-10-12)
 
 
