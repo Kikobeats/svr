@@ -45,7 +45,7 @@
     "clean-stack": "~2.2.0",
     "clear-module": "~4.0.0",
     "debounce": "~1.2.0",
-    "get-port": "~5.0.0",
+    "get-port": "~5.1.1",
     "ignore-by-default": "~1.0.1",
     "ignored": "~2.0.4",
     "indent-string": "~4.0.0",
