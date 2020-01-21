@@ -46,9 +46,15 @@ const cli = require('meow')(require('./help'), {
     }
   }
 })
+
+const watchFiles = watch => {
+  if (watch[0] === false) return false
+  return Array.isArray(watch) ? watch : [watch]
+}
+
 ;(async () => {
   const { input } = cli
-  const { cwd, port, watch: watchFiles, ...opts } = cli.flags
+  const { cwd, port, watch, ...opts } = cli.flags
   const { filename, pkg } = getMainFile({ input, cwd })
   const filepath = path.resolve(cwd, filename)
 
@@ -57,7 +63,7 @@ const cli = require('meow')(require('./help'), {
     pkg,
     cwd,
     port,
-    watchFiles: Array.isArray(watchFiles) ? watchFiles : [watchFiles],
+    watchFiles: watchFiles(watch),
     ...opts
   })
 })()

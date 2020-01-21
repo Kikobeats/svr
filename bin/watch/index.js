@@ -17,8 +17,6 @@ const isRestartSignal = str =>
     .trim()
     .toLowerCase() === RESTART_SIGNAL
 
-let firsTime = false
-
 const doRestart = ({ sockets, server, filename, forcing, ...opts }) => {
   const spinner = logRestart({ filename, forcing })
   destroySockets(sockets)
@@ -41,9 +39,6 @@ module.exports = ({ cwd, pkg, watchFiles, ...opts }) => {
     pkg
   })
 
-  const toWatch = [].concat(watchFiles, cwd)
-  const watcher = watch(toWatch, watchConfig)
-
   const restart = ({ forcing, filename }) =>
     doRestart({
       ...opts,
@@ -54,19 +49,19 @@ module.exports = ({ cwd, pkg, watchFiles, ...opts }) => {
       forcing
     })
 
-  watcher.once(
-    'all',
-    debounce(
-      (event, filename) => restart({ forcing: false, filename: path.relative(cwd, filename) }),
-      10
+  if (watchFiles) {
+    const toWatch = [].concat(watchFiles, cwd)
+    const watcher = watch(toWatch, watchConfig)
+    watcher.once(
+      'all',
+      debounce(
+        (event, filename) => restart({ forcing: false, filename: path.relative(cwd, filename) }),
+        10
+      )
     )
-  )
-
-  if (!firsTime) {
-    firsTime = true
-
-    process.stdin.on('data', data => {
-      if (isRestartSignal(data)) restart({ forcing: true })
-    })
   }
+
+  process.stdin.once('data', data => {
+    if (isRestartSignal(data)) restart({ forcing: true })
+  })
 }
