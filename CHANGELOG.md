@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/kikobeats/svr/compare/v2.2.4...v2.3.0) (2020-01-21)
+
+
+### Features
+
+* be possible disable watch ([bda15a3](https://github.com/kikobeats/svr/commit/bda15a3a2a270c2d08b9afa30e11289a8674da2e))
+
 ### [2.2.4](https://github.com/kikobeats/svr/compare/v2.2.3...v2.2.4) (2020-01-21)
 
 ### [2.2.3](https://github.com/kikobeats/svr/compare/v2.2.2...v2.2.3) (2020-01-20)
