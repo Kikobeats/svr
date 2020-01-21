@@ -2,9 +2,6 @@
 
 'use strict'
 
-process.env.NODE_ENV = process.env.NODE_ENV || 'development'
-process.setMaxListeners(Infinity)
-
 if (process.env.NODE_ENV === 'production') {
   throw Error('`svr` is only oriented for development scenarios.')
 }
@@ -39,12 +36,10 @@ const cli = require('meow')(require('./help'), {
       default: []
     },
     depth: {
-      type: 'number',
-      default: undefined
+      type: 'number'
     },
     restartSignal: {
-      type: 'string',
-      default: undefined
+      type: 'string'
     },
     cwd: {
       default: process.cwd()
