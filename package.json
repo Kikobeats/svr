@@ -2,7 +2,7 @@
   "name": "svr",
   "description": "HTTP development server done right",
   "homepage": "https://nicedoc.io/Kikobeats/svr",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "main": "bin/serve/index.js",
   "bin": {
     "svr": "bin/cli/index.js"
