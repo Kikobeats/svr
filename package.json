@@ -51,7 +51,7 @@
     "indent-string": "~4.0.0",
     "ip": "~1.1.5",
     "load-json-file": "~6.2.0",
-    "log-symbols": "~3.0.0",
+    "log-symbols": "~4.0.0",
     "log-update": "~4.0.0",
     "meow": "~6.1.0",
     "ora": "~4.0.3",
