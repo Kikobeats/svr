@@ -26,14 +26,16 @@ const cli = require('meow')(require('./help'), {
     },
     ignore: {
       type: 'array',
-      default: []
+      default: [],
+      isMultiple: true
     },
     host: {
       default: '::'
     },
     watch: {
       type: 'array',
-      default: []
+      default: [],
+      isMultiple: true
     },
     depth: {
       type: 'number'
