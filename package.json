@@ -41,7 +41,7 @@
     "boxen": "~4.2.0",
     "chalk": "~4.1.0",
     "chokidar": "~3.4.0",
-    "clean-stack": "~2.2.0",
+    "clean-stack": "~3.0.0",
     "clear-module": "~4.1.0",
     "debounce": "~1.2.0",
     "get-port": "~5.1.1",
