@@ -52,7 +52,7 @@
     "load-json-file": "~6.2.0",
     "log-symbols": "~4.0.0",
     "log-update": "~4.0.0",
-    "meow": "~7.0.1",
+    "meow": "~7.1.0",
     "ora": "~5.0.0",
     "pretty-error": "~2.1.1",
     "pretty-ms": "~7.0.0",
