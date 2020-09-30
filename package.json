@@ -58,7 +58,7 @@
     "pretty-ms": "~7.0.0",
     "time-span": "~4.0.0",
     "time-stamp": "~2.2.0",
-    "update-notifier": "~4.1.0"
+    "update-notifier": "~5.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "latest",
