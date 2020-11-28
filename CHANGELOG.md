@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.23](https://github.com/kikobeats/svr/compare/v2.3.22...v2.3.23) (2020-11-28)
+
+
+### Bug Fixes
+
+* cli types ([08f2b9e](https://github.com/kikobeats/svr/commit/08f2b9ef978392fa8c986ed9908994f46b0cbd88))
+
 ### [2.3.22](https://github.com/kikobeats/svr/compare/v2.3.21...v2.3.22) (2020-10-30)
 
 ### [2.3.21](https://github.com/kikobeats/svr/compare/v2.3.20...v2.3.21) (2020-09-30)
