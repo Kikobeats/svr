@@ -25,7 +25,7 @@ const cli = require('meow')(require('./help'), {
       default: false
     },
     ignore: {
-      type: 'array',
+      type: 'string',
       default: [],
       isMultiple: true
     },
@@ -33,7 +33,7 @@ const cli = require('meow')(require('./help'), {
       default: '::'
     },
     watch: {
-      type: 'array',
+      type: 'string',
       default: [],
       isMultiple: true
     },
