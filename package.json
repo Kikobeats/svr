@@ -54,7 +54,7 @@
     "log-update": "~4.0.0",
     "meow": "~8.1.0",
     "ora": "~5.2.0",
-    "pretty-error": "~2.1.2",
+    "pretty-error": "~3.0.3",
     "pretty-ms": "~7.0.1",
     "time-span": "~4.0.0",
     "time-stamp": "~2.2.0",
