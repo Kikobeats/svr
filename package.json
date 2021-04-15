@@ -63,7 +63,7 @@
     "ora": "~5.4.0",
     "pretty-error": "~3.0.3",
     "pretty-ms": "~7.0.1",
-    "time-span": "~4.0.0",
+    "time-span": "~5.0.0",
     "time-stamp": "~2.2.0",
     "update-notifier": "~5.1.0"
   },
