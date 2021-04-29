@@ -1,20 +1,11 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 99
-  ignore:
-  - dependency-name: indent-string
-    versions:
-    - 5.0.0
-  - dependency-name: clean-stack
-    versions:
-    - 4.0.0
-  - dependency-name: log-symbols
-    versions:
-    - 5.0.0
-  - dependency-name: time-span
-    versions:
-    - 5.0.0
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      # Check for updates to GitHub Actions every weekday
+      interval: "daily"
