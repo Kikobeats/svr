@@ -56,7 +56,7 @@
     "ignored": "~2.0.4",
     "indent-string": "~4.0.0",
     "ip": "~1.1.5",
-    "load-json-file": "~6.2.0",
+    "load-json-file": "~7.0.0",
     "log-symbols": "~4.1.0",
     "log-update": "~4.0.0",
     "meow": "~9.0.0",
