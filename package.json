@@ -60,7 +60,7 @@
     "log-symbols": "~4.1.0",
     "log-update": "~4.0.0",
     "meow": "~9.0.0",
-    "ora": "~5.4.0",
+    "ora": "~6.0.1",
     "pretty-error": "~3.0.3",
     "pretty-ms": "~7.0.1",
     "time-span": "~4.0.0",
