@@ -46,7 +46,7 @@
   ],
   "dependencies": {
     "boxen": "~5.1.0",
-    "chalk": "~4.1.0",
+    "chalk": "~5.0.1",
     "chokidar": "~3.5.0",
     "clean-stack": "~3.0.1",
     "clear-module": "~4.1.1",
