@@ -52,7 +52,7 @@
     "clear-module": "~4.1.1",
     "debounce": "~1.2.0",
     "get-port": "~5.1.1",
-    "ignore-by-default": "~2.0.0",
+    "ignore-by-default": "~2.1.0",
     "ignored": "~2.0.4",
     "indent-string": "~4.0.0",
     "ip": "~1.1.5",
